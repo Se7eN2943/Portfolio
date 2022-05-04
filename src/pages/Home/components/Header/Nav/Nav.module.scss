@@ -1,0 +1,24 @@
+@use "../../../../../style" as *;
+
+
+.list {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  font-size: $size-text--base;
+  color: $color-text--light;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+
+  &_active {
+    border-bottom-color: $color--base;
+    color: $color-text--dark;
+  }
+}

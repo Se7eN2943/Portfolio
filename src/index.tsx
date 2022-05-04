@@ -1,17 +1,16 @@
-import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import App from './App'
+import App from './App/App'
 import store from './redux/store'
 
 const app = (
-  <Router>
+  <BrowserRouter>
     <Provider store={store()}>
       <App />
     </Provider>
-  </Router>
+  </BrowserRouter>
 )
 
-render(app, document.getElementById('root'))
+render(app, document.querySelector('#root'))

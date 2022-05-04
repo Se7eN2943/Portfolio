@@ -1,33 +1,18 @@
-import React, { FC, useEffect } from 'react'
+import { FC } from 'react'
 
-import LayoutContainer from '../../components/LayoutContainer'
-
-import StartScreen from './sections/StartScreen'
-import WhatDoWant from './sections/WhatDoWant'
-import HowWorks from './sections/HowWorks'
-import UpcomingEvents from './sections/UpcomingEvents'
-import Stats from './sections/Stats'
-import Organizators from './sections/Organizators'
-
-let wasViewed = false
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Portfolio from './components/Portfolio/Portfolio'
+import Footer from './components/Footer/Footer'
 
 const Home: FC = () => {
-  useEffect(() => {
-    wasViewed = !wasViewed
-  }, [wasViewed])
 
   return (
     <>
-      <LayoutContainer>
-        <StartScreen />
-        <WhatDoWant />
-        <HowWorks />
-      </LayoutContainer>
-      <UpcomingEvents />
-      <LayoutContainer>
-        <Stats />
-        <Organizators />
-      </LayoutContainer>
+      <Header />
+      <Main />
+      <Portfolio />
+      <Footer />
     </>
   )
 }
