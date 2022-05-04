@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
-import Interests from '../../../components/Interests'
+// import Interests from '../../../components/Interests'
 import { RootState } from '../../../redux/store'
 import { userDTO } from '../../../redux/reducers/user'
 import { editUser } from '../../../services/editUser'
@@ -203,7 +203,7 @@ const Modal = ({ modalActivate, setModalActivate }: PersonalAreaProps) => {
           </div>
           <div className={s.modal_content__interests}>
             <div className={s.modal_content__title}>Интересы</div>
-            <Interests />
+            {/* <Interests /> */}
           </div>
           <div className={s.modal_content__btn}>
             <button type="submit" className={s.btnFill}>

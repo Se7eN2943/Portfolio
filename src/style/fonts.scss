@@ -1,29 +1,9 @@
 @font-face {
-  font-family: ptsans-bold;
-  src: url(../assets/fonts/PTSans-Bold.ttf);
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+}
+@font-face {
+  font-family: 'Arodora';
+  src: url(../assets/fonts/ArodoraPro-Light.otf);
 }
 
-@font-face {
-  font-family: ptsans-bold-italic;
-  src: url(../assets/fonts/PTSans-BoldItalic.ttf);
-}
-
-@font-face {
-  font-family: ptsans-regular;
-  src: url(../assets/fonts/PTSans-Regular.ttf);
-}
-
-@font-face {
-  font-family: ptsans-italic;
-  src: url(../assets/fonts/PTSans-Italic.ttf);
-}
-
-@font-face {
-  font-family: SegoeUI;
-  src: url(../assets/fonts/SegoeUI.ttf);
-}
-
-@font-face {
-  font-family: SegoeUI-Bold;
-  src: url(../assets/fonts/SegoeUI-Bold.ttf);
-}

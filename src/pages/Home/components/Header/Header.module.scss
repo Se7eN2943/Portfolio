@@ -1,2 +1,47 @@
-@use "../../../../style" as *;
+@use "../../../../style"as *;
 
+.header {
+    background-color: $header_bgc;
+
+    &_content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1260px;
+    }
+
+    &_aboutAs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__inform {
+            color: $headerAndSkills_text_color;
+            width: 40%;
+
+            span {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            p {
+                font-family: 'Arodora', sans-serif;
+            }
+        }
+
+        &__img {
+            width: 50%;
+
+            img {
+                @include size(100%);
+                margin-bottom: -10px;
+            }
+        }
+    }
+}

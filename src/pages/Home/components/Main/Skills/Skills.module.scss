@@ -1,0 +1,36 @@
+@use "../../../../../style"as *;
+
+.main_skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 130px;
+
+    .skill {
+        &_logo {
+            @include size(115px);
+            margin-bottom: 20px;
+
+            &__img {
+                @include size(100%);
+            }
+        }
+
+        &_title {
+            font-family: 'Adoro', sans-serif;
+        }
+    }
+
+    &__squer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $headerAndSkills_text_color;
+        @include size(240px);
+        background: $skills_squer_bg;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.47);
+        border-radius: 29px;
+    }
+}

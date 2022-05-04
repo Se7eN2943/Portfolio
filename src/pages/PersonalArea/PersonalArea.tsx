@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import CardEvent from '../../components/CardEvent/CardEvent'
+// import CardEvent from '../../components/CardEvent/CardEvent'
 import { RootState } from '../../redux/store'
 
 import Modal from './components/Modal'
@@ -114,7 +114,7 @@ const PersonalArea: FC = () => {
 
   const events: any = eventList.map((event: any) => (
     <div key={event.id} className={`${s.card}`}>
-      <CardEvent key={event.id} event={event} />
+      {/* <CardEvent key={event.id} event={event} /> */}
     </div>
   ))
 

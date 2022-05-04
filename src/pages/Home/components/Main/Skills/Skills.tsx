@@ -8,14 +8,16 @@ import SASSLogo from '../../../../../assets/img/SASSLogo.png'
 import ReactLogo from '../../../../../assets/img/ReactLogo.png'
 import ReduxLogo from '../../../../../assets/img/ReduxLogo.png'
 
+import s from './Skills.module.scss'
+
 const SkillSquer = (props: { logo: string, title: string }) => {
   const { logo, title } = props
   return (
-    <div className="main_skills__squer">
-      <div className="skill_logo">
-        <img className="skill_logo__img" src={logo} alt="" />
+    <div className={s.main_skills__squer}>
+      <div className={s.skill_logo}>
+        <img className={s.skill_logo__img} src={logo} alt="" />
       </div>
-      <div className="skill_title">
+      <div className={s.skill_title}>
         {title}
       </div>
     </div>
@@ -27,7 +29,7 @@ const SkillSquer = (props: { logo: string, title: string }) => {
 const Skills: FC = () => {
 
   return (
-    <div className="main_skills">
+    <div className={s.main_skills}>
       <SkillSquer logo={CSSLogo} title='CSS 3' />
       <SkillSquer logo={HTMLLogo} title='HTML 5' />
       <SkillSquer logo={JSLogo} title='JavaScript ES6' />
