@@ -15,13 +15,9 @@ const Footer: FC = () => {
         <div className={s.tel}>
           <span>Телефон: 8-999-798-48-47</span>
         </div>
-
       </div>
-      <div className={s.footer_back}>
-        <div className={s.back_btn}>
-          <img src={btn} alt="" />
-        </div>
-        <span>Вернуться</span>
+      <div className="copirate">
+        Copyright © 2022  Владислав Тодоров
       </div>
     </footer>
   )

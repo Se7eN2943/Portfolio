@@ -26,6 +26,7 @@
             p {
                 @include SmallText();
                 font-size: 25px;
+                margin-top: 15px;
             }
         }
 
@@ -34,7 +35,6 @@
 
             img {
                 @include size(100%);
-                margin-bottom: -5px;
             }
         }
 

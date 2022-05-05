@@ -1,10 +1,12 @@
 @use "../style"as *;
+@import 'antd/dist/antd.css';
 @import "../style/fonts.scss";
 @import "~normalize.css/normalize.css";
 
 body {
     background-color: $body_bgc;
     color: $text_color;
+    line-height: inherit;
 }
 
 .swiper-button-next,
@@ -20,4 +22,18 @@ body {
 a{
     text-decoration: none;
     color: inherit;
+}
+
+button{
+    outline: none;
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    color: inherit;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
 }
