@@ -32,7 +32,7 @@
 
     &__active {
       border-bottom-color: $nav_border_color;
-
+      pointer-events: none;
       &:hover {
         cursor: default;
         color: $text_color;

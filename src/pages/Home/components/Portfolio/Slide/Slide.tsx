@@ -1,24 +1,28 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import s from './Slide.module.scss'
-import img from '../img.png'
 import arrow from '../../../../../assets/img/arrow.png'
+interface SlideProps {
+  img: string,
+  text: string,
+  head: string,
+  link: string
+}
 
-const Slide: FC = (props) => {
-
+const Slide = ({ img, text, head, link }: SlideProps) => {
   return (
     <div className={s.portfolio_slider__slide}>
       <div className={s.portfolio_slider__slide___img}>
         <img src={img} alt="" />
       </div>
       <div className={s.portfolio_slider__slide___text}>
-        <h6>Название</h6>
-        <p>Идейные соображения высшего порядка, а также понимание сущности ресурсосберегающих технологий создаёт предпосылки качественно новых шагов для системы обучения
-          кадров, соответствующей насущным потребностям. Идейные соображения высшего порядка, а также сложившаяся структура организации требует анализа существующий
-          финансовых и административных условий.
-        </p>
+        <h6>{head}</h6>
+        <p>{text}</p>
         <div className={s.more}>
-          <span>Перейти</span>
+          <Link to={link}>
+            <span>Перейти</span>
+          </Link>
           <div className={s.arrow}>
             <img src={arrow} alt="" />
           </div>
