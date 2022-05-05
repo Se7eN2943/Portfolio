@@ -1,0 +1,16 @@
+@use "../../../../style"as *;
+
+.portfolio {
+    @include flexCenter();
+    flex-direction: column;
+    margin-bottom: 150px;
+
+    h5 {
+        @include UpperText(500, 48px);
+    }
+
+    &_slider {
+        max-width: 1260px;
+    }
+}
+

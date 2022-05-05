@@ -1,0 +1,23 @@
+@use "../style"as *;
+@import "../style/fonts.scss";
+@import "~normalize.css/normalize.css";
+
+body {
+    background-color: $body_bgc;
+    color: $text_color;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    &:after {
+        content: 'next';
+    }
+
+    right: 35px;
+    left: auto;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

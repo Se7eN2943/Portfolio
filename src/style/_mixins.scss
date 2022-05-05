@@ -1,16 +1,38 @@
 @use "./vars"as *;
+@use "./colors"as *;
 
-// 26 23 16
+@mixin SmallText() {
+  font-family: 'Arodora', sans-serif;
+  font-size: 22px;
+}
 
-// @mixin text($size: $size-text--base,
-//   $family: pt-sans-regular,
-//   $user-select: none,
-//   $color: black) {
-//   font-family: $family, sans-serif;
-//   font-size: $size;
-//   user-select: $user-select;
-//   color: $color;
-// }
+@mixin UpperText($fw, $fs) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $fs;
+  font-weight: $fw;
+  text-transform: uppercase;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin headerBtn() {
+  @include UpperText(700, 18px);
+  padding: 14px 40px 14px 40px;
+  background: $header_btn_bgc;
+  box-shadow: $header_btn_shadow;
+  border-radius: 6px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+  }
+}
+
+
 
 // @mixin fill-widget($round: 1px) {
 //   @include text($size-text--base, $color: white);

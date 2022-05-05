@@ -1,0 +1,14 @@
+@use "../../../../style"as *;
+
+.footer {
+    @include SmallText();
+    background: $gradient_bg;
+    padding: 35px;
+    display: flex;
+    justify-content: space-around;
+    &_contacts{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

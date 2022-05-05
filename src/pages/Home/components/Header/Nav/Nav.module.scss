@@ -1,24 +1,41 @@
-@use "../../../../../style" as *;
+@use "../../../../../style"as *;
 
 
-.list {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-  padding: 0;
-}
+.nav {
+  position: fixed;
+  background: $nav_bg;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
 
-.listItem {
-  font-size: $size-text--base;
-  color: $color-text--light;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 12px 0;
-  border-bottom: 2px solid transparent;
+  &_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+  }
 
-  &_active {
-    border-bottom-color: $color--base;
-    color: $color-text--dark;
+  &_listItem {
+    @include SmallText();
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.5)
+    }
+
+    &__active {
+      border-bottom-color: $nav_border_color;
+
+      &:hover {
+        cursor: default;
+        transform: scale(1)
+      }
+    }
   }
 }

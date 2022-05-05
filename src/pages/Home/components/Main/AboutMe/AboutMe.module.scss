@@ -1,13 +1,9 @@
 @use "../../../../../style"as *;
 
-.main_aboutMi {
-    max-width: 1080px;
+.main_aboutMe {
     margin: 0 auto 0 auto;
-    padding: 30px 10px 10px 10px;
-    height: 950px;
     display: flex;
-    background: url(../../../../../assets/img/AboutMiBg.png), no-repeat center;
-    background-size: cover;
+    max-width: 1000px;
 
     &__img {
         background: #2C2C2C;
@@ -28,13 +24,24 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
+        margin: -30px -15px -30px 0;
+        gap: 20px;
     }
 
     &__text {
-        color: #FFFFFF;
         width: 40%;
         background: #2C2C2C;
+        border-radius: 14px;
         padding: 28px;
+
+        h4 {
+            @include UpperText(400, 48px);
+            margin: -65px 0 40px 0;
+        }
+
+        p {
+            @include SmallText();
+        }
     }
 
     &__endImg {
@@ -42,5 +49,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-left: -15px;
+
     }
+}
+
+.aboutMe_wrapper {
+    background: url(../../../../../assets/img/AboutMiBg.png) no-repeat center;
+    background-size: cover;
+    padding: 30px 10px 100px 10px;
 }
