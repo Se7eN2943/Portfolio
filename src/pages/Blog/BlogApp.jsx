@@ -18,7 +18,7 @@ import EditProfile from './components/EditProfile/EditProfile'
 import EditArticle from './components/EditArticle/EditArticle'
 
 import './BlogApp.scss'
-import './components/Header/Header.scss';
+import './components/Header/Header.scss'
 import './components/Article/Article.scss'
 import './components/Forms/AccountForms.scss'
 

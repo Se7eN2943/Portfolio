@@ -30,7 +30,8 @@ export default class CinemaService {
 
   async rateMovie(value, id, session_id) {
     const res = await fetch(
-      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`, {
+      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`,
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -38,7 +39,8 @@ export default class CinemaService {
         body: JSON.stringify({
           'value': value
         })
-      });
+      }
+    )
     if (!res.ok) throw new Error('Не удалось оценить фильм')
     return await res.json()
   }
@@ -60,13 +62,7 @@ export default class CinemaService {
   }
 }
 
-const {
-  Provider: ProviderGeners,
-  Consumer: ConsumerGeners
-} =
-React.createContext()
+const { Provider: ProviderGeners, Consumer: ConsumerGeners } =
+  React.createContext()
 
-export {
-  ProviderGeners,
-  ConsumerGeners
-}
+export { ProviderGeners, ConsumerGeners }

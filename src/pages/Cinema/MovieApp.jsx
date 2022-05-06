@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Input, Spin, Alert, Tabs} from 'antd'
+import { Input, Spin, Alert, Tabs } from 'antd'
 
 import FilmCardList from './components/FilmCardList/FilmCardList'
 import CinemaService, { ProviderGeners } from './services'
@@ -58,14 +58,12 @@ export default class MovieApp extends Component {
       inquiry
         .then((movieOBJ) => {
           const elements = mutationData(movieOBJ)
-          return this.setState(
-            {
-              items: elements,
-              loaded: true,
-              totalRes: movieOBJ.total_results,
-              pages: movieOBJ.page
-            }
-          )
+          return this.setState({
+            items: elements,
+            loaded: true,
+            totalRes: movieOBJ.total_results,
+            pages: movieOBJ.page
+          })
         })
         .catch(this.onError)
     } else return this.setState({ items: [], loaded: true })
@@ -106,57 +104,59 @@ export default class MovieApp extends Component {
 
   render() {
     const { TabPane } = Tabs
-    const { error, loaded, items, onloaded, totalRes, pages, value, genres } = this.state
+    const { error, loaded, items, onloaded, totalRes, pages, value, genres } =
+      this.state
     return (
       <ProviderGeners value={genres}>
-          <main className="filmCards">
-            <Tabs
-              onChange={(activeKey) =>
-                activeKey == '2' ? this.movie('getRate') : this.movie()
-              }
-              defaultActiveKey="1"
-              centered
-            >
-              <TabPane tab="Поиск" key="1">
-                <Input
-                  autoFocus
-                  placeholder="Начните вводить название фильма"
-                  type="text"
-                  value={this.state.value}
-                  onInput={this.debounce}
-                  onChange={this.onChange}
+        <main className="filmCards">
+          <Tabs
+            onChange={(activeKey) =>
+              activeKey == '2' ? this.movie('getRate') : this.movie()
+            }
+            defaultActiveKey="1"
+            centered
+          >
+            <TabPane tab="Поиск" key="1">
+              <Input
+                autoFocus
+                placeholder="Начните вводить название фильма"
+                type="text"
+                value={this.state.value}
+                onInput={this.debounce}
+                onChange={this.onChange}
+              />
+              {onloaded && <h1>Популярное сегодня</h1>}
+              {error && (
+                <Alert
+                  message="Не получилось загрузить данные =("
+                  type="error"
+                  showIcon
                 />
-                {onloaded && <h1>Популярное сегодня</h1>}
-                {error && (
-                  <Alert
-                    message="Не получилось загрузить данные =("
-                    type="error"
-                    showIcon
-                  />
-                )}
-                {totalRes === 0 && (
-                  <Alert message="Ничего не найдено" type="info" showIcon />
-                )}
-                {!loaded && <Spin />}
-                {!error && loaded && (
-                  <FilmCardList
-                    card={items}
-                    onChangeFavorit={this.onChangeFavorit}
-                  />
-                )}
-                {!(loaded && error) && < FilmCardList card={items} onChangeFavorit={this.onChangeFavorit} />}
-              </TabPane>
-              <TabPane tab="Оцененные" key="2">
-                {!loaded && <Spin />}
-                {!(loaded && error) && (
-                  <FilmCardList
-                    card={items}
-                    onChangeFavorit={this.onChangeFavorit}
-                  />
-                )}
-              </TabPane>
-            </Tabs>
-          </main>
+              )}
+              {totalRes === 0 && (
+                <Alert message="Ничего не найдено" type="info" showIcon />
+              )}
+              {!loaded && <Spin />}
+              {!error && loaded && (
+                <FilmCardList
+                  card={items}
+                  onChangeFavorit={this.onChangeFavorit}
+                />
+              )}
+              {!(loaded && error) && < FilmCardList card={items} onChangeFavorit={this.onChangeFavorit} />}
+              )}
+            </TabPane>
+            <TabPane tab="Оцененные" key="2">
+              {!loaded && <Spin />}
+              {!(loaded && error) && (
+                <FilmCardList
+                  card={items}
+                  onChangeFavorit={this.onChangeFavorit}
+                />
+              )}
+            </TabPane>
+          </Tabs>
+        </main>
       </ProviderGeners>
     )
   }

@@ -38,9 +38,12 @@ let data = [
 export default class ToDoApp extends Component {
   state = { todoData: data, togleClass: 'All' }
 
-  clearComplite = () => this.setState(() => ({ todoData: this.state.todoData.filter(item => !item.checked) }))
+  clearComplite = () =>
+    this.setState(() => ({
+      todoData: this.state.todoData.filter((item) => !item.checked)
+    }))
 
-  todoFilter = status => this.setState({ togleClass: status })
+  todoFilter = (status) => this.setState({ togleClass: status })
 
   timeOnData = (minutes, seconds, id, timerPlay) =>
     this.setState(() => ({
@@ -61,7 +64,7 @@ export default class ToDoApp extends Component {
         return item
       })
     }))
-  };
+  }
 
   onDelTasks = (id) =>
     this.setState(() => ({
@@ -82,9 +85,10 @@ export default class ToDoApp extends Component {
         id: Math.random(),
         checked: false,
         timestamp: new Date()
-      }];
+      }
+    ]
     this.setState(() => ({ todoData: newTask.concat(this.state.todoData) }))
-  };
+  }
 
   render() {
     return (
