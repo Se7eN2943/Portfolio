@@ -6,8 +6,8 @@ import s from './Footer.module.scss'
 
 const Footer: FC = () => {
   return (
-    <footer id="footer" className={s.footer}>
-      <div className={s.footer_contacts}>
+    <footer id="footer" className={s.homeFooter}>
+      <div className={s.homeFooter_contacts}>
         <span>Контакты:</span>
         <div className={s.email}>
           <span>Email: flip2943@gmail.com</span>

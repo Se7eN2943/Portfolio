@@ -1,5 +1,6 @@
 @use "../../../../style"as *;
 
+
 .portfolio {
     @include flexCenter();
     flex-direction: column;
@@ -13,5 +14,14 @@
     &_slider {
         max-width: 1260px;
     }
-}
 
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        &:after {
+            content: 'next';
+        }
+
+        right: 35px;
+        left: auto;
+    }
+}

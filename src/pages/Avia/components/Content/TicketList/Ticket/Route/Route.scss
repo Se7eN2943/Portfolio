@@ -1,27 +1,28 @@
-@import '../../../../colors.scss';
+@import '../../../../../../../style/colors';
 
-.route {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
 
-    .routeBlock {
+    .route {
         display: flex;
-        flex-direction: column;
-        font-weight: 600;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
 
-        .name {
-            font-size: 12px;
-            line-height: 18px;
-            text-transform: uppercase;
-            color: $grayText;
-        }
+        .routeBlock {
+            display: flex;
+            flex-direction: column;
+            font-weight: 600;
 
-        .time {
-            font-size: 14px;
-            line-height: 21px;
-            color: $bleckText;
+            .name {
+                font-size: 12px;
+                line-height: 18px;
+                text-transform: uppercase;
+                color: $grayText;
+            }
+
+            .time {
+                font-size: 14px;
+                line-height: 21px;
+                color: $bleckText;
+            }
         }
     }
-}

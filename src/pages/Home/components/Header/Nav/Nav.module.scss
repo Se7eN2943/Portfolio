@@ -1,42 +1,43 @@
 @use "../../../../../style"as *;
 
 
-.nav {
-  position: fixed;
-  background: $nav_bg;
-  top: 0;
-  right: 0;
-  width: 100%;
-  z-index: 100;
+  .homeNav {
+    position: fixed;
+    background: $nav_bg;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
 
-  &_list {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 15px 0;
-  }
-
-  &_listItem {
-    @include SmallText();
-    cursor: pointer;
-    box-sizing: border-box;
-    padding: 12px 0;
-    border-bottom: 2px solid transparent;
-
-    &:hover {
-      cursor: pointer;
-      color: $nav_border_color;
+    &_list {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 15px 0;
     }
 
-    &__active {
-      border-bottom-color: $nav_border_color;
-      pointer-events: none;
+    &_listItem {
+      @include SmallText();
+      cursor: pointer;
+      box-sizing: border-box;
+      padding: 12px 0;
+      border-bottom: 2px solid transparent;
+
       &:hover {
-        cursor: default;
-        color: $text_color;
+        cursor: pointer;
+        color: $nav_border_color;
+      }
+
+      &__active {
+        border-bottom-color: $nav_border_color;
+        pointer-events: none;
+
+        &:hover {
+          cursor: default;
+          color: $text_color;
+        }
       }
     }
   }
-}

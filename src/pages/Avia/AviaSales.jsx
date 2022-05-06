@@ -10,12 +10,10 @@ import logo from './avia.png'
 import AviaSales from './services'
 
 import 'animate.css'
-import 'antd/dist/antd.css'
 import './AviaSales.scss'
 import './components/Filters/Filters.scss'
 import './components/Content/Tabs/Tabs.scss'
 import './components/Content/TicketList/TicketList.scss'
-import './components/Content/TicketList/Ticket/Ticket.scss'
 import './components/Content/TicketList/Ticket/Route/Route.scss'
 import './components/Content/Content.scss'
 
@@ -39,7 +37,6 @@ const AviaSalesApp = () => {
   const getTickets = () =>
     aviaSales.getTickets(searchId).then((ticket) => {
       if (!ticket) return getTickets()
-      console.log(ticket)
       dispatch(TICKETS(ticket))
       if (!ticket.stop) return getTickets()
       return
@@ -54,7 +51,7 @@ const AviaSalesApp = () => {
   }, [searchId])
 
   return (
-    <>
+    <div className="avia">
       <header>
         <Logo />
       </header>
@@ -72,7 +69,7 @@ const AviaSalesApp = () => {
         <Filters />
         <Content />
       </main>
-    </>
+    </div>
   )
 }
 

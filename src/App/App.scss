@@ -3,30 +3,31 @@
 @import "../style/fonts.scss";
 @import "~normalize.css/normalize.css";
 
-body {
-    background-color: $body_bgc;
-    color: $text_color;
-    line-height: inherit;
-}
-
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-    &:after {
-        content: 'next';
-    }
-
-    right: 35px;
-    left: auto;
-}
-
 a {
     text-decoration: none;
     color: inherit;
 }
 
+ul {
+    padding: 0px;
+}
+
 button {
     outline: none;
     border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    appearance: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 h1,

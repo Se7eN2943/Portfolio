@@ -40,7 +40,7 @@ const Tabs = () => {
         key={i}
       />
     ))
-    return <section>{elements}</section>
+    return <section className='tabs'>{elements}</section>
   }
 
   return <TabsButtons />

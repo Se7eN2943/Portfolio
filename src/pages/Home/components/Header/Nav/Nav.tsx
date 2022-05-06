@@ -1,15 +1,15 @@
 import { FC, useState } from 'react'
 
 import s from './Nav.module.scss'
-console.log(window.visualViewport)
+
 const Nav: FC = () => {
   const [activeBtn, setActiveBtn] = useState('home')
   return (
-    <nav className={s.nav}>
-      <ul className={s.nav_list}>
+    <nav className={s.homeNav}>
+      <ul className={s.homeNav_list}>
         <a
-          className={`${s.nav_listItem} ${
-            activeBtn === 'home' ? s.nav_listItem__active : null
+          className={`${s.homeNav_listItem} ${
+            activeBtn === 'home' ? s.homeNav_listItem__active : null
           }`}
           onClick={() => setActiveBtn('home')}
           href="#header"
@@ -18,8 +18,8 @@ const Nav: FC = () => {
         </a>
         <a
           href="#aboutMe"
-          className={`${s.nav_listItem} ${
-            activeBtn === 'me' ? s.nav_listItem__active : null
+          className={`${s.homeNav_listItem} ${
+            activeBtn === 'me' ? s.homeNav_listItem__active : null
           }`}
           onClick={() => setActiveBtn('me')}
         >
@@ -27,8 +27,8 @@ const Nav: FC = () => {
         </a>
         <a
           href="#portfolio"
-          className={`${s.nav_listItem} ${
-            activeBtn === 'works' ? s.nav_listItem__active : null
+          className={`${s.homeNav_listItem} ${
+            activeBtn === 'works' ? s.homeNav_listItem__active : null
           }`}
           onClick={() => setActiveBtn('works')}
         >
@@ -36,8 +36,8 @@ const Nav: FC = () => {
         </a>
         <a
           href="#footer"
-          className={`${s.nav_listItem} ${
-            activeBtn === 'call' ? s.nav_listItem__active : null
+          className={`${s.homeNav_listItem} ${
+            activeBtn === 'call' ? s.homeNav_listItem__active : null
           }`}
           onClick={() => setActiveBtn('call')}
         >

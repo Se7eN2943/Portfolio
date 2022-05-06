@@ -18,7 +18,7 @@ import EditProfile from './components/EditProfile/EditProfile'
 import EditArticle from './components/EditArticle/EditArticle'
 
 import './BlogApp.scss'
-// import './components/Header/Header.scss';
+import './components/Header/Header.scss';
 import './components/Article/Article.scss'
 import './components/Forms/AccountForms.scss'
 
@@ -26,7 +26,7 @@ const blog = new BlogAPI()
 
 function BlogApp() {
   const dispatch = useDispatch()
-  const { totalRes, token } = useSelector((state) => state.blogReducer)
+  const { articlesCount, token } = useSelector((state) => state.blogReducer)
   const [page, setPage] = useState(1)
   const [load, setLoad] = useState(false)
   const [onLoad, setOnLoad] = useState(true)
@@ -57,7 +57,7 @@ function BlogApp() {
   }, [])
 
   return (
-    <>
+    <div className="blog">
       <Header getAllArticles={getAllArticles} />
       {load ? (
         <Spin />
@@ -85,7 +85,7 @@ function BlogApp() {
                       getAllArticles((page - 1) * 20)
                     }}
                     size="small"
-                    total={totalRes}
+                    total={articlesCount}
                     current={page}
                   />
                 )}
@@ -154,7 +154,7 @@ function BlogApp() {
           />
         </Routes>
       )}
-    </>
+    </div>
   )
 }
 

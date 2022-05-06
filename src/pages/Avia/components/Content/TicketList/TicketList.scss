@@ -1,24 +1,25 @@
-@import '../../colors.scss';
+@import '../../../../../style/colors';
 
-.allTicketsBtn {
-    border: none;
-    width: 100%;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 20px;
-    border-radius: 5px;
 
-    &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-    }
-}
+    .allTicketsBtn {
+        border: none;
+        width: 100%;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        border-radius: 5px;
 
-@media screen and (max-width: 800px) {
-
-    .ticket {
-        width: 65%;
-        
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
     }
 
-}
+    @media screen and (max-width: 800px) {
+
+        .ticket {
+            width: 65%;
+
+        }
+
+    }

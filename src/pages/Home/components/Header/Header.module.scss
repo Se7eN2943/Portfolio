@@ -1,8 +1,9 @@
 @use "../../../../style"as *;
 
-.header {
+.homeHeader {
+    padding-top: 80px;
     &_content {
-        margin-top: 80px;
+        // margin-top: 80px;
         margin-left: auto;
         margin-right: auto;
         max-width: 1260px;

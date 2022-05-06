@@ -11,7 +11,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <header id="header" className={s.header}>
+      <header id="header" className={s.homeHeader}>
         <Modal
           footer={[]}
           title="Контакты"
@@ -38,21 +38,21 @@ const Header: FC = () => {
             </a>
           </p>
         </Modal>
-        <div className={s.header_content}>
+        <div className={s.homeHeader_content}>
           <Nav />
-          <div className={s.header_aboutUs}>
-            <div className={s.header_aboutUs__inform}>
+          <div className={s.homeHeader_aboutUs}>
+            <div className={s.homeHeader_aboutUs__inform}>
               <span>привет</span>
               <h1>Меня зовут влад тодоров</h1>
               <p>и я начинающий Front-end разработчик</p>
               <button
                 onClick={() => setIsModalVisible(true)}
-                className={s.header_aboutUs__btn}
+                className={s.homeHeader_aboutUs__btn}
               >
                 Связаться со мной
               </button>
             </div>
-            <div className={s.header_aboutUs__img}>
+            <div className={s.homeHeader_aboutUs__img}>
               <img src={HeaderImg} alt="header IMG" />
             </div>
           </div>

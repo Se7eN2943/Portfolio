@@ -88,21 +88,23 @@ export default class ToDoApp extends Component {
 
   render() {
     return (
-      <div className="todoApp">
-        <NewTaskForm onAdd={this.onAdd} />
-        <TaskList
-          tododata={this.state.todoData}
-          onDelTasks={(id) => this.onDelTasks(id)}
-          timeOnData={this.timeOnData}
-          onChecked={this.onChecked}
-          togleClass={this.state.togleClass}
-        />
-        <Footer
-          clearComplite={this.clearComplite}
-          dataLength={this.state.todoData.length}
-          todoFilter={this.todoFilter}
-          togleClass={this.state.togleClass}
-        />
+      <div className="todowrapper">
+        <section className="todoapp">
+          <NewTaskForm onAdd={this.onAdd} />
+          <TaskList
+            tododata={this.state.todoData}
+            onDelTasks={(id) => this.onDelTasks(id)}
+            timeOnData={this.timeOnData}
+            onChecked={this.onChecked}
+            togleClass={this.state.togleClass}
+          />
+          <Footer
+            clearComplite={this.clearComplite}
+            dataLength={this.state.todoData.length}
+            todoFilter={this.todoFilter}
+            togleClass={this.state.togleClass}
+          />
+        </section>
       </div>
     )
   }
