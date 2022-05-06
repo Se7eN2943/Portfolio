@@ -36,9 +36,9 @@ const Portfolio: FC = () => {
           onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide><Slide img={todo} text={todoText} head='ToDo App' link='/ToDoApp' /></SwiperSlide>
-          <SwiperSlide><Slide img={cinema} text={cinemaText} head='Search Cinema' link='/ToDoApp' /></SwiperSlide>
-          <SwiperSlide><Slide img={avia} text={aviaText} head='Avia Sales' link='/ToDoApp' /></SwiperSlide>
-          <SwiperSlide><Slide img={blog} text={blogText} head='Realworld Blog' link='/ToDoApp' /></SwiperSlide>
+          <SwiperSlide><Slide img={cinema} text={cinemaText} head='Search Cinema' link='/MovieApp' /></SwiperSlide>
+          <SwiperSlide><Slide img={avia} text={aviaText} head='Avia Sales' link='/AviaSales' /></SwiperSlide>
+          <SwiperSlide><Slide img={blog} text={blogText} head='Realworld Blog' link='/BlogApp' /></SwiperSlide>
         </Swiper>
       </div>
     </div>
