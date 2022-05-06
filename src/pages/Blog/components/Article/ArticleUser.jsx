@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux'
 import { format } from 'date-fns';
 import { Popover, Button } from 'antd';
 import { InfoCircleFilled } from '@ant-design/icons';
@@ -9,7 +9,8 @@ import BlogAPI from '../../services/services';
 const blog = new BlogAPI();
 
 function ArticleUser(props) {
-  const { author, createdAt, username, slug, alone, token, getAllArticles } = props;
+  const { username, token } = useSelector((state) => state.blogReducer)
+  const { author, createdAt, slug, alone, getAllArticles } = props;
   const navigate = useNavigate();
   const data = createdAt !== undefined && createdAt.split('T')[0];
   const [vilibale, setVisibale] = useState(false);
@@ -67,11 +68,4 @@ function ArticleUser(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    username: state.username,
-    token: state.token,
-  };
-};
-
-export default connect(mapStateToProps)(ArticleUser);
+export default ArticleUser;

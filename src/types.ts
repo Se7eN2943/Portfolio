@@ -1,10 +1,44 @@
-import { ReactElement } from 'react'
-import { Path, RegisterOptions, UseFormRegister } from 'react-hook-form'
-
-interface Dto {
-  // Первичный ключ
-  id: number
+export interface AviaSalesState {
+  searchId: string,
+  tickets: any,  //потом типизировать правильно
+  ticketsFlag: boolean,
+  filterList: any,   //потом типизировать правильно
+  sortFlag: any,   //потом типизировать правильно
+  sliced: number,
 }
+
+export interface BlogState {
+  articles: any, //потом типизировать правильно
+  articlesCount: number,
+  article?: any, //потом типизировать правильно
+  auth: boolean | string, 
+  username: string,
+  image: string,
+  token: string,
+  email: string,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface Dto { }
+
+
+
 
 export interface InterestDto extends Dto {
   // Название
@@ -134,13 +168,6 @@ export interface SignUpFields {
   age: string
 }
 
-export interface InputProps<T> {
-  label: Path<T>
-  register: UseFormRegister<T>
-  config: RegisterOptions
-  area?: boolean
-}
-
 export interface CardProps {
   name: string
   surname: string
@@ -157,27 +184,10 @@ export interface LoopItemProps extends BoxGeometry {
   left: number
 }
 
-export interface LoopProps<T> extends BoxGeometry {
-  data: T[]
-
-  renderItem(el: T, index?: number, arr?: T[]): ReactElement
-
-  gap: number
-  run?: boolean
-}
 
 export type SliderStartGuard = 'start' | 'middle' | 'end'
 
-export interface SliderProps<T> {
-  data: T[]
 
-  renderItem(dataElement: T): ReactElement
-
-  width: number
-  height: number
-  gap: number
-  startFrom?: SliderStartGuard
-}
 
 export interface City {
   id: number

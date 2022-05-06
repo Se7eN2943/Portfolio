@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Checkbox } from 'antd';
-import { connect } from 'react-redux'
-import { setFilterList } from '../../redux/actions'
-import 'antd/dist/antd.css';
+import { useDispatch } from 'react-redux'
+import { FILTER } from '../../../../redux/reducers/aviaSalesReducer'
 
 const CheckboxGroup = Checkbox.Group;
 const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
 const defaultCheckedList = ['Без пересадок'];
 
-const Filters = ({ setFilterList, filterList }) => {
+const Filters = () => {
+    const dispatch = useDispatch()
     const [checkedList, setCheckedList] = useState(defaultCheckedList);
     const [indeterminate, setIndeterminate] = useState(true);
     const [checkAll, setCheckAll] = useState(false);
@@ -17,7 +17,7 @@ const Filters = ({ setFilterList, filterList }) => {
         setCheckedList(list);
         setIndeterminate(!!list.length && list.length < plainOptions.length);
         setCheckAll(list.length === plainOptions.length);
-        setFilterList(list)
+        dispatch(FILTER(list))
     };
 
     const onCheckAllChange = e => {
@@ -40,6 +40,4 @@ const Filters = ({ setFilterList, filterList }) => {
     );
 };
 
-const mapStateToProps = state => ({filterList: state.filterList})
-
-export default connect(mapStateToProps, { setFilterList })(Filters)
+export default Filters

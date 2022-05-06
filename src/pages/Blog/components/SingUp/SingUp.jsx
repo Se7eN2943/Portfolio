@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Checkbox, Modal, Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux'
+import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput';
 import BlogAPI from '../../services/services';
-import { setSignIn, setUserImg } from '../../redux/actions';
 import setLocalHost from '../../services/utiles';
 import defaultPhoto from '../default_photo.png';
 
@@ -13,6 +13,7 @@ const blog = new BlogAPI();
 
 function SingUp({ setSignIn, setUserImg }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const {
     register,
     handleSubmit,
@@ -39,14 +40,14 @@ function SingUp({ setSignIn, setUserImg }) {
         return setIsModalVisible(true)
       }
       const { username, token, email } = res.user;
-      setSignIn(res.user);
+      dispatch(SIGNIN(res.user));
       blog.getUserProfile(username).then((res) => {
         if (!res) {
           setLocalHost(username, email, token, true, defaultPhoto);
-          setUserImg(defaultPhoto);
+          dispatch(SETIMG(defaultPhoto));
         } else {
           setLocalHost(username, email, token, true, res.profile.image);
-          setUserImg(res.profile.image);
+          dispatch(SETIMG(res.profile.image));
         }
       });
       navigate(-1);
@@ -148,17 +149,8 @@ function SingUp({ setSignIn, setUserImg }) {
           </div>
         </form>
       </div>
-
-
     </>
-
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    username: state.username,
-  };
-};
-
-export default connect(mapStateToProps, { setSignIn, setUserImg })(SingUp);
+export default SingUp;

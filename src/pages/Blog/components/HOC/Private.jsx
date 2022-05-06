@@ -1,16 +1,11 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux'
 
-function Private({ children, auth }) {
+function Private({ children}) {
   const location = useLocation();
+  const { auth } = useSelector((state) => state.blogReducer)
   if (!auth) return <Navigate to="/sign-in" state={{ goingFrom: location }} />;
   return children;
 }
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-  };
-};
-
-export default connect(mapStateToProps)(Private);
+export default Private;

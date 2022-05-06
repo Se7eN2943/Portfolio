@@ -13,7 +13,7 @@ export default function App() {
             <Route path="/ToDoApp" element={<ToDoApp />} />
             <Route path="/MovieApp" element={<MovieApp />} />
             <Route path="/AviaSales" element={<AviaSalesApp />} />
-            <Route path="/BlogApp" element={<BlogApp />} />
+            <Route path="/BlogApp/*" element={<BlogApp />} />
         </Routes>
     )
 }

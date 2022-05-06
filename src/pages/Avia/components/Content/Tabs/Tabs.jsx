@@ -1,16 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { setSortFlag } from '../../../redux/actions'
+import { useSelector, useDispatch } from 'react-redux'
+import { SORT } from '../../../../../redux/reducers/aviaSalesReducer'
 
-const Tabs = ({ sortFlag, setSortFlag }) => {
-
+const Tabs = () => {
+    const dispatch = useDispatch()
+    const { sortFlag } = useSelector((state) => state.aviaSalesReducer)
     const buttonsName = [{ name: 'discount', tittle: 'самый дешевый' }, { name: 'fast', tittle: 'самый быстрый' }, { name: 'optimal', tittle: 'оптимальный' }]
 
     const TabsButton = ({ name, tittle, classPos }) => {
         return (
             <button
                 name={name}
-                onClick={() => setSortFlag(name)}
+                onClick={() => dispatch(SORT(name))}
                 className={`${classPos} navBtn  weight600 ${sortFlag === name ? 'active' : null}`}>
                 {tittle}
             </button>
@@ -33,6 +33,4 @@ const Tabs = ({ sortFlag, setSortFlag }) => {
     return <TabsButtons />
 }
 
-const mapStateToProps = state => ({ sortFlag: state.sortFlag })
-
-export default connect(mapStateToProps, { setSortFlag })(Tabs)
+export default Tabs

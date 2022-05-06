@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pagination, Spin, Alert } from 'antd';
-import { connect } from 'react-redux';
-import { Routes, Route, Navigate} from 'react-router-dom';
-import { setArticles, setArticle } from './redux/actions';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { ARTICLES, ARTICLE } from '../../redux/reducers/blogReducer'
 import BlogAPI from './services/services';
 import Header from './components/Header/Header';
 import ArticleList from './components/ArticleList/ArticleList';
@@ -15,10 +15,16 @@ import CreateArticle from './components/CreateArticle/CreateArticle';
 import EditProfile from './components/EditProfile/EditProfile';
 import EditArticle from './components/EditArticle/EditArticle';
 
+import './BlogApp.scss';
+// import './components/Header/Header.scss';
+import './components/Article/Article.scss';
+import './components/Forms/AccountForms.scss';
+
 const blog = new BlogAPI();
 
-function BlogApp(props) {
-  const { setArticles, setArticle, totalRes, token } = props;
+function BlogApp() {
+  const dispatch = useDispatch()
+  const { totalRes, token } = useSelector((state) => state.blogReducer)
   const [page, setPage] = useState(1);
   const [load, setLoad] = useState(false);
   const [onLoad, setOnLoad] = useState(true);
@@ -27,7 +33,7 @@ function BlogApp(props) {
     setLoad(true);
     await blog.getArticles(page, token).then((articles) => {
       if (!articles) return setOnLoad(false);
-      setArticles(articles);
+      dispatch(ARTICLES(articles));
       setOnLoad(true);
     });
     return setLoad(false);
@@ -37,7 +43,7 @@ function BlogApp(props) {
     setLoad(true);
     await blog.getArticle(slug, token).then((article) => {
       if (!article) return setOnLoad(false);
-      setArticle(article);
+      dispatch(ARTICLE(article));
       localStorage.setItem('article', JSON.stringify(article));
       setOnLoad(true);
     });
@@ -84,7 +90,7 @@ function BlogApp(props) {
               </>
             }
           />
-          <Route path="/" element={<Navigate to="/articles" replace />} />
+          <Route path="/" element={<Navigate to="articles" replace />} />
           <Route
             path="articles/:slug"
             element={
@@ -113,7 +119,7 @@ function BlogApp(props) {
             path="articles/:slug/edit"
             element={
               <Private>
-                  <EditArticle getOneArticle={getOneArticle} />
+                <EditArticle getOneArticle={getOneArticle} />
               </Private>
             }
           />
@@ -147,13 +153,5 @@ function BlogApp(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    articles: state.articles,
-    article: state.article,
-    totalRes: state.articlesCount,
-    token: state.token,
-  };
-};
 
-export default connect(mapStateToProps, { setArticles, setArticle })(BlogApp);
+export default BlogApp;

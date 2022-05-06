@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
-import { createStore } from 'redux';
-import { connect, Provider } from 'react-redux'
+import { useEffect } from 'react';
 import { Progress } from 'antd';
+import { useSelector, useDispatch } from 'react-redux'
+import { SEARCH_ID, TICKETS } from '../../redux/reducers/aviaSalesReducer'
 import Filters from './components/Filters/Filters'
 import Content from './components/Content/Content'
 import logo from './avia.png';
 import AviaSales from './services';
-import { setSearchId, setTickets, setTicketsFlag } from './redux/actions';
-import reducer from './redux/reducer';
 
 import 'animate.css';
 import 'antd/dist/antd.css';
@@ -21,17 +19,18 @@ import './components/Content/Content.scss';
 
 const aviaSales = new AviaSales();
 
-const store = createStore(reducer);
-
 const Logo = () => <div className="headerLogo"><img src={logo} alt="aviaLogo" /></div>
 
-const AviaSalesApp = ({ setSearchId, setTickets, searchId, ticketsFlag, setTicketsFlag, tickets }) => {
+const AviaSalesApp = () => {
+    const dispatch = useDispatch()
+    const { searchId, ticketsFlag, tickets } = useSelector((state) => state.aviaSalesReducer)
 
-    const getSerch = () => aviaSales.getSearchId().then(id => setSearchId(id))
+    const getSerch = () => aviaSales.getSearchId().then(id => dispatch(SEARCH_ID(id)))
 
     const getTickets = () => aviaSales.getTickets(searchId).then(ticket => {
         if (!ticket) return getTickets()
-        setTickets(ticket)
+        console.log(ticket)
+        dispatch(TICKETS(ticket))
         if (!ticket.stop) return getTickets()
         return
     })
@@ -45,7 +44,7 @@ const AviaSalesApp = ({ setSearchId, setTickets, searchId, ticketsFlag, setTicke
     }, [searchId])
 
     return (
-        <Provider store={store}>
+        <>
             <header><Logo /></header>
             {!ticketsFlag && <Progress
                 strokeColor={{
@@ -59,19 +58,11 @@ const AviaSalesApp = ({ setSearchId, setTickets, searchId, ticketsFlag, setTicke
                 <Filters />
                 <Content />
             </main>
-        </Provider>
+        </>
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        searchId: state.searchId,
-        tickets: state.tickets,
-        ticketsFlag: state.ticketsFlag
-    }
-}
-
-export default connect(mapStateToProps, { setSearchId, setTickets, setTicketsFlag })(AviaSalesApp)
+export default AviaSalesApp
 
 
 

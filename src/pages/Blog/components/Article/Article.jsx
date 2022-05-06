@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleTittle from './ArticleTittle';
 import ArticleUser from './ArticleUser';
 

@@ -1,10 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { setSlice } from '../../../redux/actions'
+import { useSelector, useDispatch } from 'react-redux'
+import { SLICED } from '../../../../../redux/reducers/aviaSalesReducer'
 import Ticket from './Ticket/Ticket';
 import { Alert } from 'antd';
 
-const TicketList = ({ tickets, filterList, sortFlag, sliced, setSlice }) => {
+const TicketList = () => {
+    const dispatch = useDispatch()
+    const { sortFlag, sliced, tickets, filterList } = useSelector((state) => state.aviaSalesReducer)
+
 
     let filteredTickets = filterList.length === 4 && tickets || []
 
@@ -67,7 +69,7 @@ const TicketList = ({ tickets, filterList, sortFlag, sliced, setSlice }) => {
                     <div className="tickets">
                         {elements.slice(0, sliced)}
                     </div>
-                    <button onClick={() => setSlice(sliced + 5)} className="allTicketsBtn active">
+                    <button onClick={() => dispatch(SLICED(sliced + 5))} className="allTicketsBtn active">
                         Показать еще 5 билетов!
                     </button>
                 </>
@@ -76,13 +78,5 @@ const TicketList = ({ tickets, filterList, sortFlag, sliced, setSlice }) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        tickets: state.tickets,
-        filterList: state.filterList,
-        sortFlag: state.sortFlag,
-        sliced: state.sliced,
-    }
-}
 
-export default connect(mapStateToProps, { setSlice })(TicketList)
+export default TicketList

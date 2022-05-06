@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
+import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput';
 import BlogAPI from '../../services/services';
-import { setSignIn, setUserImg } from '../../redux/actions';
 
 const blog = new BlogAPI();
 
-function EditProfile({ username, email, image, token, setSignIn, setUserImg }) {
+function EditProfile() {
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const dispatch = useDispatch()
+  const { username, token, email, image, } = useSelector((state) => state.blogReducer)
   const [userName, setUserName] = useState(username);
   const [userEmail, setUserEmail] = useState(email);
   const [userAvatar, setUserAvatar] = useState(image);
@@ -45,8 +47,8 @@ function EditProfile({ username, email, image, token, setSignIn, setUserImg }) {
         email: user.email,
         token: user.token,
       };
-      setSignIn(putUser);
-      setUserImg(user.image);
+      dispatch(SIGNIN(putUser));
+      dispatch(SETIMG(user.image));
       navigate('/articles');
     });
   };
@@ -116,13 +118,4 @@ function EditProfile({ username, email, image, token, setSignIn, setUserImg }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    username: state.username,
-    email: state.email,
-    image: state.image,
-    token: state.token,
-  };
-};
-
-export default connect(mapStateToProps, { setSignIn, setUserImg })(EditProfile);
+export default EditProfile;

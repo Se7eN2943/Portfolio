@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal, Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux'
+import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput';
 import BlogAPI from '../../services/services';
-import { setSignIn, setUserImg } from '../../redux/actions';
 import setLocalHost from '../../services/utiles';
 
 const blog = new BlogAPI();
 
-function SingIn({ setSignIn, setUserImg }) {
+function SingIn() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalText, setModalText] = useState('An error occurred while trying to send data. Please try again or refresh the page.');
   const {
@@ -19,6 +19,7 @@ function SingIn({ setSignIn, setUserImg }) {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const onSubmit = async (data) => {
     const user = {
@@ -34,10 +35,10 @@ function SingIn({ setSignIn, setUserImg }) {
         setModalText('Email or password entered is incorrect.')
         return setIsModalVisible(true)
       }
-      setSignIn(res.user);
+      dispatch(SIGNIN(res.user));
       const { username, token, image, email } = res.user;
       setLocalHost(username, email, token, true, image);
-      blog.getUserProfile(res.user.username).then((res) => setUserImg(res.profile.image));
+      blog.getUserProfile(res.user.username).then((res) => dispatch(SETIMG(res.profile.image)));
       navigate(-1);
     });
   };
@@ -89,14 +90,7 @@ function SingIn({ setSignIn, setUserImg }) {
         </form>
       </div>
     </>
-
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    token: state.token,
-  };
-};
-
-export default connect(mapStateToProps, { setSignIn, setUserImg })(SingIn);
+export default SingIn;

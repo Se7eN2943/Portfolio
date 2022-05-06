@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux'
 import FormInput from '../Forms/FormInput';
 import BlogAPI from '../../services/services';
 
@@ -66,7 +66,8 @@ function TagList({ tags, onDeleteTag }) {
   );
 }
 
-function CreateArticle({ token, article, editing, getOneArticle }) {
+function CreateArticle({ editing, getOneArticle }) {
+  const { article, token } = useSelector((state) => state.blogReducer)
   const { title, description, body, tagList, slug } = article;
   const defaultTagList = editing ? tagList : [];
   const {
@@ -157,11 +158,4 @@ function CreateArticle({ token, article, editing, getOneArticle }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    token: state.token,
-    article: state.article,
-  };
-};
-
-export default connect(mapStateToProps)(CreateArticle);
+export default CreateArticle;

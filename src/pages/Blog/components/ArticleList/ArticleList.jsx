@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
 import Article from '../Article/Article';
+import { useSelector } from 'react-redux'
 
-function ArticleList({ articles, getOneArticle }) {
+function ArticleList({ getOneArticle }) {
+  const { articles } = useSelector((state) => state.blogReducer)
   const elements = articles.map((article) => {
     return (
       <Article
@@ -29,10 +29,4 @@ function ArticleList({ articles, getOneArticle }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    articles: state.articles,
-  };
-};
-
-export default connect(mapStateToProps)(ArticleList);
+export default ArticleList;

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 const FormInput = forwardRef((props, ref) => {
   const { inputClass, name, label, errors, ...other } = props;

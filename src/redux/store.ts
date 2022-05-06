@@ -1,23 +1,21 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import userReducer from './reducers/user'
-import servicesReducer from './reducers/servicesReducer'
-import userInterestReducer from './reducers/userInterestReducer'
+import aviaSalesReducer from './reducers/aviaSalesReducer'
+import blogReducer from './reducers/blogReducer'
+
 
 const rootReducer = combineReducers({
-  userReducer,
-  servicesReducer,
-  userInterestReducer
+  aviaSalesReducer,
+  blogReducer
 })
 
 const logger =
   (store: { getState: () => any }) =>
-    (next: (arg0: any) => any) =>
+    (next: (arg: any) => any) =>
       (actions: any) => {
         const res = next(actions)
-        console.log('User', store.getState().userReducer)
-        console.log('Interests', store.getState().userInterestReducer)
-        console.log('Service', store.getState().servicesReducer)
+        console.log('AviaSales', store.getState().aviaSalesReducer)
+        console.log('Blog', store.getState().blogReducer)
         return res
       }
 

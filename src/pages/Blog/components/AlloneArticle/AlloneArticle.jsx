@@ -1,11 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ArticleTittle from '../Article/ArticleTittle';
 import ArticleUser from '../Article/ArticleUser';
 
-function AlloneArticle({ article, getAllArticles }) {
+
+function AlloneArticle({ getAllArticles }) {
+  const { article } = useSelector((state) => state.blogReducer)
   return (
     <main>
       <div className="article shadow-box article-alone">
@@ -41,11 +42,4 @@ function AlloneArticle({ article, getAllArticles }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    article: state.article,
-    token: state.token,
-  };
-};
-
-export default connect(mapStateToProps)(AlloneArticle);
+export default AlloneArticle;

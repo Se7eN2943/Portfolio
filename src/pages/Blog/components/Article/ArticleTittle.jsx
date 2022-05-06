@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import BlogAPI from '../../services/services';
 
@@ -51,7 +51,8 @@ function Tags({ tag }) {
 }
 
 function ArticleTittle(props) {
-  const { auth, slug, title, description, favorited, favoritesCount, tagList, token, getOneArticle, alone } = props;
+  const { auth, token } = useSelector((state) => state.blogReducer)
+  const { slug, title, description, favorited, favoritesCount, tagList, getOneArticle, alone } = props;
   const [like, setLike] = useState(favorited);
   const [likeCount, setLikeCount] = useState(favoritesCount);
   const tags = tagList?.map((tag, i) => tag.length != 0 && <Tags tag={tag} key={i} />);
@@ -88,11 +89,4 @@ function ArticleTittle(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-    token: state.token,
-  };
-};
-
-export default connect(mapStateToProps)(ArticleTittle);
+export default ArticleTittle;
