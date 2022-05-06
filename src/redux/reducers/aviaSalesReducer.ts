@@ -8,8 +8,8 @@ const initialState: AviaSalesState = {
   ticketsFlag: false,
   filterList: ['Без пересадок'],
   sortFlag: 'discount',
-  sliced: 5,
-};
+  sliced: 5
+}
 
 export const aviaSalesSlice = createSlice({
   name: 'Aviasales',
@@ -19,8 +19,8 @@ export const aviaSalesSlice = createSlice({
       state.searchId = payload.searchId
     },
     TICKETS(state, { payload }) {
-      state.tickets = state.tickets.concat(payload.tickets),
-        state.ticketsFlag = payload.stop
+      (state.tickets = state.tickets.concat(payload.tickets)),
+        (state.ticketsFlag = payload.stop)
     },
     SORT(state, { payload }) {
       state.sortFlag = payload
@@ -38,6 +38,5 @@ export const aviaSalesSlice = createSlice({
 })
 
 export default aviaSalesSlice.reducer
-export const { SEARCH_ID, TICKETS, SORT, FILTER, SLICED, TICKETS_FLAG } = aviaSalesSlice.actions
-
-
+export const { SEARCH_ID, TICKETS, SORT, FILTER, SLICED, TICKETS_FLAG } =
+  aviaSalesSlice.actions

@@ -1,58 +1,61 @@
-import React, { useState } from 'react';
-import { Checkbox, Modal, Button } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
+import { Checkbox, Modal, Button } from 'antd'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
-import FormInput from '../Forms/FormInput';
-import BlogAPI from '../../services/services';
-import setLocalHost from '../../services/utiles';
-import defaultPhoto from '../default_photo.png';
 
-const blog = new BlogAPI();
+import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
+import FormInput from '../Forms/FormInput'
+import BlogAPI from '../../services/services'
+import setLocalHost from '../../services/utiles'
+import defaultPhoto from '../default_photo.png'
+
+const blog = new BlogAPI()
 
 function SingUp({ setSignIn, setUserImg }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors, isValid },
-  } = useForm({ mode: 'onBlur' });
-  const [checked, setChecked] = useState(false);
+    formState: { errors, isValid }
+  } = useForm({ mode: 'onBlur' })
+  const [checked, setChecked] = useState(false)
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalText, setModalText] = useState('An error occurred while trying to send data. Please try again or refresh the page.');
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [modalText, setModalText] = useState(
+    'An error occurred while trying to send data. Please try again or refresh the page.'
+  )
 
   const onSubmit = async (data) => {
     const user = {
       user: {
         username: data.username,
         email: data.email,
-        password: data.password,
-      },
-    };
+        password: data.password
+      }
+    }
     await blog.registerNewUser(user).then((res) => {
       if (!res) return setIsModalVisible(true)
       if (res === '422') {
         setModalText('Mail or login already exists.')
         return setIsModalVisible(true)
       }
-      const { username, token, email } = res.user;
-      dispatch(SIGNIN(res.user));
+      const { username, token, email } = res.user
+      dispatch(SIGNIN(res.user))
       blog.getUserProfile(username).then((res) => {
         if (!res) {
-          setLocalHost(username, email, token, true, defaultPhoto);
-          dispatch(SETIMG(defaultPhoto));
+          setLocalHost(username, email, token, true, defaultPhoto)
+          dispatch(SETIMG(defaultPhoto))
         } else {
-          setLocalHost(username, email, token, true, res.profile.image);
-          dispatch(SETIMG(res.profile.image));
+          setLocalHost(username, email, token, true, res.profile.image)
+          dispatch(SETIMG(res.profile.image))
         }
-      });
-      navigate(-1);
-    });
-  };
+      })
+      navigate(-1)
+    })
+  }
 
   return (
     <>
@@ -61,9 +64,15 @@ function SingUp({ setSignIn, setUserImg }) {
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
-          <Button key="back" type='primary' onClick={() => setIsModalVisible(false)}>
+          <Button
+            key="back"
+            type="primary"
+            onClick={() => setIsModalVisible(false)}
+          >
             Ok
-          </Button>]}>
+          </Button>
+        ]}
+      >
         <p>{modalText}</p>
       </Modal>
       <div className="form shadow-box">
@@ -78,12 +87,12 @@ function SingUp({ setSignIn, setUserImg }) {
               required: true,
               minLength: {
                 value: 3,
-                message: 'Your username needs to be at least 3 characters.',
+                message: 'Your username needs to be at least 3 characters.'
               },
               maxLength: {
                 value: 20,
-                message: 'Your username must be no more than 20 characters.',
-              },
+                message: 'Your username must be no more than 20 characters.'
+              }
             })}
           />
           <FormInput
@@ -93,7 +102,7 @@ function SingUp({ setSignIn, setUserImg }) {
             label="Email address"
             type="email"
             {...register('email', {
-              required: true,
+              required: true
             })}
           />
           <FormInput
@@ -106,12 +115,12 @@ function SingUp({ setSignIn, setUserImg }) {
               required: true,
               minLength: {
                 value: 6,
-                message: 'Your password needs to be at least 6 characters.',
+                message: 'Your password needs to be at least 6 characters.'
               },
               maxLength: {
                 value: 40,
-                message: 'Your username must be no more than 40 characters.',
-              },
+                message: 'Your username must be no more than 40 characters.'
+              }
             })}
           />
           <FormInput
@@ -122,15 +131,20 @@ function SingUp({ setSignIn, setUserImg }) {
             type="password"
             {...register('repeatPassword', {
               required: true,
-              validate: (value) => value === watch('password') || 'Passwords must match',
+              validate: (value) =>
+                value === watch('password') || 'Passwords must match'
             })}
           />
           <div className="form_line" />
           <div className="form_checkbox">
             <Checkbox onChange={(e) => setChecked(e.target.checked)}>
-              <div className="form_checkbox_label">I agree to the processing of my personal information</div>
+              <div className="form_checkbox_label">
+                I agree to the processing of my personal information
+              </div>
             </Checkbox>
-            <div className="form_input_error">{errors?.checkbox && <span>{errors?.checkbox?.message}</span>}</div>
+            <div className="form_input_error">
+              {errors?.checkbox && <span>{errors?.checkbox?.message}</span>}
+            </div>
           </div>
           <button
             className="form_submit"
@@ -150,7 +164,7 @@ function SingUp({ setSignIn, setUserImg }) {
         </form>
       </div>
     </>
-  );
+  )
 }
 
-export default SingUp;
+export default SingUp

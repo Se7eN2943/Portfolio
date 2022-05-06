@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux'
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import ArticleTittle from '../Article/ArticleTittle';
-import ArticleUser from '../Article/ArticleUser';
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
+import ArticleTittle from '../Article/ArticleTittle'
+import ArticleUser from '../Article/ArticleUser'
 
 function AlloneArticle({ getAllArticles }) {
   const { article } = useSelector((state) => state.blogReducer)
@@ -39,7 +39,7 @@ function AlloneArticle({ getAllArticles }) {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default AlloneArticle;
+export default AlloneArticle

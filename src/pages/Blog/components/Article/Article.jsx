@@ -1,5 +1,5 @@
-import ArticleTittle from './ArticleTittle';
-import ArticleUser from './ArticleUser';
+import ArticleTittle from './ArticleTittle'
+import ArticleUser from './ArticleUser'
 
 function Article(props) {
   return (
@@ -16,7 +16,7 @@ function Article(props) {
       />
       <ArticleUser author={props.author} createdAt={props.createdAt} />
     </div>
-  );
+  )
 }
 
-export default Article;
+export default Article

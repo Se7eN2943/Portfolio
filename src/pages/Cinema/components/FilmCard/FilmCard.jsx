@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Rate } from 'antd';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Rate } from 'antd'
 import { format } from 'date-fns'
-import FilmCardGenre from './FilmCardGenre/FilmCardGenre';
+
+import FilmCardGenre from './FilmCardGenre/FilmCardGenre'
 
 export default class FilmCard extends Component {
-
   state = {
     count: 0
   }
@@ -22,15 +22,15 @@ export default class FilmCard extends Component {
   }
 
   static defaultProps = {
-    name: "Без названия",
+    name: 'Без названия',
     date: null,
-    overview: "Нет описания фильма",
-    img: "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/e48bc3b5-24c9-46dd-9a05-2ae421830604/600x900",
+    overview: 'Нет описания фильма',
+    img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/e48bc3b5-24c9-46dd-9a05-2ae421830604/600x900',
     count: 0,
     id: 1,
     genre: ['Жанр не указан'],
     average: 0,
-    onChangeFavorit: () => { }
+    onChangeFavorit: () => {}
   }
 
   checkCount = () => {
@@ -38,8 +38,9 @@ export default class FilmCard extends Component {
     if (this.props.count != 0) return this.setState({ count: count })
     const localItem = JSON.parse(sessionStorage.getItem('items'))
     if (localItem !== null) {
-      localItem.forEach(item => {
-        if (item.key === id && item.count !== undefined) return this.setState({ count: item.count })
+      localItem.forEach((item) => {
+        if (item.key === id && item.count !== undefined)
+          return this.setState({ count: item.count })
       })
     }
   }
@@ -50,51 +51,59 @@ export default class FilmCard extends Component {
     return onChangeFavorit(id, e)
   }
 
-
   componentDidMount = () => {
     this.setState({ count: this.props.count })
     this.checkCount()
   }
 
   render() {
-    const { name, overview, id, genre, average } = this.props;
+    const { name, overview, id, genre, average } = this.props
     let { date, img } = this.props
     function FilmImg() {
       return (
         <div className="film-card_img">
           <img
-            src={img != null
-              ? img = `https://image.tmdb.org/t/p/original${img}`
-              : (img = "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/e48bc3b5-24c9-46dd-9a05-2ae421830604/600x900")}
-            alt={name}>
-          </img>
+            src={
+              img != null
+                ? (img = `https://image.tmdb.org/t/p/original${img}`)
+                : (img =
+                    'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/e48bc3b5-24c9-46dd-9a05-2ae421830604/600x900')
+            }
+            alt={name}
+          ></img>
         </div>
       )
     }
 
     function FilmTextH2() {
-      let raitingStyle = ""
-      if (average < 3) raitingStyle = "raiting raiting_03"
-      if (average >= 3 && average < 5) raitingStyle = "raiting raiting_35"
-      if (average >= 5 && average < 7) raitingStyle = "raiting raiting_57"
-      if (average >= 7) raitingStyle = "raiting raiting_710"
+      let raitingStyle = ''
+      if (average < 3) raitingStyle = 'raiting raiting_03'
+      if (average >= 3 && average < 5) raitingStyle = 'raiting raiting_35'
+      if (average >= 5 && average < 7) raitingStyle = 'raiting raiting_57'
+      if (average >= 7) raitingStyle = 'raiting raiting_710'
 
       return (
         <div className="head">
-          <h2 className='film-card_text__name'>{name}</h2>
+          <h2 className="film-card_text__name">{name}</h2>
           {average > 0 && <div className={raitingStyle}>{average}</div>}
         </div>
       )
     }
 
     function FilmTextDate() {
-      return <p className='film-card_text__date'>{(!date || null) ? null : date = format(new Date(date), 'PP')}</p>
+      return (
+        <p className="film-card_text__date">
+          {!date || null ? null : (date = format(new Date(date), 'PP'))}
+        </p>
+      )
     }
 
     function FilmTextGenres() {
       return (
         <div className="film-card_text__genres">
-          {genre.map(item => <FilmCardGenre genre={item} key={id + Math.random()} />)}
+          {genre.map((item) => (
+            <FilmCardGenre genre={item} key={id + Math.random()} />
+          ))}
         </div>
       )
     }
@@ -116,9 +125,14 @@ export default class FilmCard extends Component {
             </div>
           </div>
           <FilmTextTitle />
-          <Rate value={this.props.count != 0 ? this.props.count : this.state.count} count={10} onChange={(e) => this.changeStars(e)} allowClear={false} />
+          <Rate
+            value={this.props.count != 0 ? this.props.count : this.state.count}
+            count={10}
+            onChange={(e) => this.changeStars(e)}
+            allowClear={false}
+          />
         </div>
       </li>
-    );
+    )
   }
 }

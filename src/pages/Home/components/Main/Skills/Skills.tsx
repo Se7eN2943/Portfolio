@@ -10,36 +10,29 @@ import ReduxLogo from '../../../../../assets/img/ReduxLogo.png'
 
 import s from './Skills.module.scss'
 
-const SkillSquer = (props: { logo: string, title: string }) => {
+const SkillSquer = (props: { logo: string; title: string }) => {
   const { logo, title } = props
   return (
     <div className={s.main_skills__squer}>
       <div className={s.skill_logo}>
         <img className={s.skill_logo__img} src={logo} alt="" />
       </div>
-      <div className={s.skill_title}>
-        {title}
-      </div>
+      <div className={s.skill_title}>{title}</div>
     </div>
   )
 }
 
-
-
 const Skills: FC = () => {
-
   return (
     <div className={s.main_skills}>
-      <SkillSquer logo={CSSLogo} title='CSS 3' />
-      <SkillSquer logo={HTMLLogo} title='HTML 5' />
-      <SkillSquer logo={JSLogo} title='JavaScript ES6' />
-      <SkillSquer logo={SASSLogo} title='SASS/SCSS' />
-      <SkillSquer logo={ReactLogo} title='React JS/TS' />
-      <SkillSquer logo={ReduxLogo} title='Redux/Redux Tool Kit' />
-      <SkillSquer logo={GitLogo} title='Git Hub/Git Lub' />
+      <SkillSquer logo={CSSLogo} title="CSS 3" />
+      <SkillSquer logo={HTMLLogo} title="HTML 5" />
+      <SkillSquer logo={JSLogo} title="JavaScript ES6" />
+      <SkillSquer logo={SASSLogo} title="SASS/SCSS" />
+      <SkillSquer logo={ReactLogo} title="React JS/TS" />
+      <SkillSquer logo={ReduxLogo} title="Redux/Redux Tool Kit" />
+      <SkillSquer logo={GitLogo} title="Git Hub/Git Lub" />
     </div>
-
-
   )
 }
 

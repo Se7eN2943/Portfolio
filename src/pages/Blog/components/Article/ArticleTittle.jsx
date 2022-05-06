@@ -1,14 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
-import BlogAPI from '../../services/services';
+import { Link } from 'react-router-dom'
 
-const blog = new BlogAPI();
+import BlogAPI from '../../services/services'
+
+const blog = new BlogAPI()
 
 function HeartOutlined({ liked }) {
   return (
     <div onClick={liked} className="heart heart-outlined">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M7.99998 15.1099C7.7722 15.1099 7.5526 15.0273 7.38146 14.8774C6.73509 14.3123 6.11193 13.7811 5.56212 13.3126L5.55932 
                 13.3102C3.94738 11.9365 2.55542 10.7502 1.58691 9.58167C0.504272 8.27527 0 7.03662 0 5.68347C0 4.36877 0.450805 3.15588 1.26928 
@@ -28,13 +35,19 @@ function HeartOutlined({ liked }) {
         />
       </svg>
     </div>
-  );
+  )
 }
 
 function HeartFilled({ liked }) {
   return (
     <div onClick={liked} className="heart heart-filled">
-      <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="16"
+        height="14"
+        viewBox="0 0 16 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M8 2.56911C7.26154 1.33835 6.03077 0.476807 4.55385 0.476807C2.46154 0.476807 0.861542 2.07681 0.861542 4.16911C0.861542 8.23065 3.07693
                 8.84604 8 13.523C12.9231 8.84604 15.1385 8.23065 15.1385 4.16911C15.1385 2.07681 13.5385 0.476807 11.4462 0.476807C9.96923 0.476807 8.73846 1.33835
@@ -43,36 +56,47 @@ function HeartFilled({ liked }) {
         />
       </svg>
     </div>
-  );
+  )
 }
 
 function Tags({ tag }) {
-  return <div className="tag">{tag}</div>;
+  return <div className="tag">{tag}</div>
 }
 
 function ArticleTittle(props) {
   const { auth, token } = useSelector((state) => state.blogReducer)
-  const { slug, title, description, favorited, favoritesCount, tagList, getOneArticle, alone } = props;
-  const [like, setLike] = useState(favorited);
-  const [likeCount, setLikeCount] = useState(favoritesCount);
-  const tags = tagList?.map((tag, i) => tag.length != 0 && <Tags tag={tag} key={i} />);
+  const {
+    slug,
+    title,
+    description,
+    favorited,
+    favoritesCount,
+    tagList,
+    getOneArticle,
+    alone
+  } = props
+  const [like, setLike] = useState(favorited)
+  const [likeCount, setLikeCount] = useState(favoritesCount)
+  const tags = tagList?.map(
+    (tag, i) => tag.length != 0 && <Tags tag={tag} key={i} />
+  )
 
   useEffect(() => {
-    !auth && setLike(false);
-  }, [auth]);
+    !auth && setLike(false)
+  }, [auth])
 
   const liked = () => {
-    if (!auth) return;
+    if (!auth) return
     if (like) {
-      blog.favorite(token, slug, 'DELETE');
-      setLike(false);
-      setLikeCount((likeCount) => (likeCount -= 1));
+      blog.favorite(token, slug, 'DELETE')
+      setLike(false)
+      setLikeCount((likeCount) => (likeCount -= 1))
     } else {
-      blog.favorite(token, slug, 'POST');
-      setLike(true);
-      setLikeCount((likeCount) => (likeCount += 1));
+      blog.favorite(token, slug, 'POST')
+      setLike(true)
+      setLikeCount((likeCount) => (likeCount += 1))
     }
-  };
+  }
 
   return (
     <div className="article_tittle">
@@ -86,7 +110,7 @@ function ArticleTittle(props) {
       <div className="article_tittle__tags">{tags}</div>
       <p className="article_tittle__tittle">{description}</p>
     </div>
-  );
+  )
 }
 
-export default ArticleTittle;
+export default ArticleTittle

@@ -1,58 +1,60 @@
-import { useEffect, useState } from 'react';
-import { Pagination, Spin, Alert } from 'antd';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { Pagination, Spin, Alert } from 'antd'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { ARTICLES, ARTICLE } from '../../redux/reducers/blogReducer'
-import BlogAPI from './services/services';
-import Header from './components/Header/Header';
-import ArticleList from './components/ArticleList/ArticleList';
-import AlloneArticle from './components/AlloneArticle/AlloneArticle';
-import SignIn from './components/SignIn/SignIn';
-import SingUp from './components/SingUp/SingUp';
-import Private from './components/HOC/Private';
-import OnAutoris from './components/HOC/OnAutoris';
-import CreateArticle from './components/CreateArticle/CreateArticle';
-import EditProfile from './components/EditProfile/EditProfile';
-import EditArticle from './components/EditArticle/EditArticle';
 
-import './BlogApp.scss';
+import BlogAPI from './services/services'
+import Header from './components/Header/Header'
+import ArticleList from './components/ArticleList/ArticleList'
+import AlloneArticle from './components/AlloneArticle/AlloneArticle'
+import SignIn from './components/SignIn/SignIn'
+import SingUp from './components/SingUp/SingUp'
+import Private from './components/HOC/Private'
+import OnAutoris from './components/HOC/OnAutoris'
+import CreateArticle from './components/CreateArticle/CreateArticle'
+import EditProfile from './components/EditProfile/EditProfile'
+import EditArticle from './components/EditArticle/EditArticle'
+
+import './BlogApp.scss'
 // import './components/Header/Header.scss';
-import './components/Article/Article.scss';
-import './components/Forms/AccountForms.scss';
+import './components/Article/Article.scss'
+import './components/Forms/AccountForms.scss'
 
-const blog = new BlogAPI();
+const blog = new BlogAPI()
 
 function BlogApp() {
   const dispatch = useDispatch()
   const { totalRes, token } = useSelector((state) => state.blogReducer)
-  const [page, setPage] = useState(1);
-  const [load, setLoad] = useState(false);
-  const [onLoad, setOnLoad] = useState(true);
+  const [page, setPage] = useState(1)
+  const [load, setLoad] = useState(false)
+  const [onLoad, setOnLoad] = useState(true)
 
   const getAllArticles = async (page) => {
-    setLoad(true);
+    setLoad(true)
     await blog.getArticles(page, token).then((articles) => {
-      if (!articles) return setOnLoad(false);
-      dispatch(ARTICLES(articles));
-      setOnLoad(true);
-    });
-    return setLoad(false);
-  };
+      if (!articles) return setOnLoad(false)
+      dispatch(ARTICLES(articles))
+      setOnLoad(true)
+    })
+    return setLoad(false)
+  }
 
   const getOneArticle = async (slug, token) => {
-    setLoad(true);
+    setLoad(true)
     await blog.getArticle(slug, token).then((article) => {
-      if (!article) return setOnLoad(false);
-      dispatch(ARTICLE(article));
-      localStorage.setItem('article', JSON.stringify(article));
-      setOnLoad(true);
-    });
-    return setLoad(false);
-  };
+      if (!article) return setOnLoad(false)
+      dispatch(ARTICLE(article))
+      localStorage.setItem('article', JSON.stringify(article))
+      setOnLoad(true)
+    })
+    return setLoad(false)
+  }
 
   useEffect(() => {
-    getAllArticles();
-  }, []);
+    getAllArticles()
+  }, [])
 
   return (
     <>
@@ -79,8 +81,8 @@ function BlogApp() {
                     showSizeChanger={false}
                     pageSize={20}
                     onChange={(page) => {
-                      setPage(page);
-                      getAllArticles((page - 1) * 20);
+                      setPage(page)
+                      getAllArticles((page - 1) * 20)
                     }}
                     size="small"
                     total={totalRes}
@@ -102,7 +104,10 @@ function BlogApp() {
                     type="info"
                   />
                 ) : (
-                  <AlloneArticle getAllArticles={getAllArticles} getOneArticle={getOneArticle} />
+                  <AlloneArticle
+                    getAllArticles={getAllArticles}
+                    getOneArticle={getOneArticle}
+                  />
                 )}
               </>
             }
@@ -150,8 +155,7 @@ function BlogApp() {
         </Routes>
       )}
     </>
-  );
+  )
 }
 
-
-export default BlogApp;
+export default BlogApp

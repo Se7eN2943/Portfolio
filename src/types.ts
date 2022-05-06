@@ -1,44 +1,24 @@
 export interface AviaSalesState {
-  searchId: string,
-  tickets: any,  //потом типизировать правильно
-  ticketsFlag: boolean,
-  filterList: any,   //потом типизировать правильно
-  sortFlag: any,   //потом типизировать правильно
-  sliced: number,
+  searchId: string
+  tickets: any //потом типизировать правильно
+  ticketsFlag: boolean
+  filterList: any //потом типизировать правильно
+  sortFlag: any //потом типизировать правильно
+  sliced: number
 }
 
 export interface BlogState {
-  articles: any, //потом типизировать правильно
-  articlesCount: number,
-  article?: any, //потом типизировать правильно
-  auth: boolean | string, 
-  username: string,
-  image: string,
-  token: string,
-  email: string,
+  articles: any //потом типизировать правильно
+  articlesCount: number
+  article?: any //потом типизировать правильно
+  auth: boolean | string
+  username: string
+  image: string
+  token: string
+  email: string
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-interface Dto { }
-
-
-
+interface Dto {}
 
 export interface InterestDto extends Dto {
   // Название
@@ -184,10 +164,7 @@ export interface LoopItemProps extends BoxGeometry {
   left: number
 }
 
-
 export type SliderStartGuard = 'start' | 'middle' | 'end'
-
-
 
 export interface City {
   id: number

@@ -1,5 +1,6 @@
-import Article from '../Article/Article';
 import { useSelector } from 'react-redux'
+
+import Article from '../Article/Article'
 
 function ArticleList({ getOneArticle }) {
   const { articles } = useSelector((state) => state.blogReducer)
@@ -19,14 +20,14 @@ function ArticleList({ getOneArticle }) {
         createdAt={article.createdAt}
         getOneArticle={getOneArticle}
       />
-    );
-  });
+    )
+  })
 
   return (
     <main>
       <div className="article-list">{elements}</div>
     </main>
-  );
+  )
 }
 
-export default ArticleList;
+export default ArticleList

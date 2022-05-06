@@ -1,5 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { LOGOUT } from '../../../../redux/reducers/blogReducer'
 
 function NonAuthHeader() {
@@ -12,11 +13,11 @@ function NonAuthHeader() {
         <button className="sign-up-button color-button">Sign Up</button>
       </Link>
     </div>
-  );
+  )
 }
 
 function AuthHeader({ username, image }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   return (
     <div className="autoris-block">
@@ -31,16 +32,16 @@ function AuthHeader({ username, image }) {
       </div>
       <Link
         onClick={() => {
-          localStorage.clear();
-          dispatch(LOGOUT());
-          navigate('/articles', { replace: true });
+          localStorage.clear()
+          dispatch(LOGOUT())
+          navigate('/articles', { replace: true })
         }}
         to="/"
       >
         <button className="log-out-button color-button">Log Out</button>
       </Link>
     </div>
-  );
+  )
 }
 
 function Header({ getAllArticles }) {
@@ -51,12 +52,16 @@ function Header({ getAllArticles }) {
         <h6 onClick={getAllArticles}>Realworld Blog</h6>
       </Link>
       {auth ? (
-        <AuthHeader getAllArticles={getAllArticles} image={image} username={username} />
+        <AuthHeader
+          getAllArticles={getAllArticles}
+          image={image}
+          username={username}
+        />
       ) : (
         <NonAuthHeader />
       )}
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

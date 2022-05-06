@@ -3,7 +3,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import aviaSalesReducer from './reducers/aviaSalesReducer'
 import blogReducer from './reducers/blogReducer'
 
-
 const rootReducer = combineReducers({
   aviaSalesReducer,
   blogReducer

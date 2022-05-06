@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+
 import { BlogState } from '../../types'
 
 const initialState: BlogState = {
@@ -9,32 +10,32 @@ const initialState: BlogState = {
   username: localStorage.getItem('username') || '',
   image: localStorage.getItem('image') || '',
   token: localStorage.getItem('token') || '',
-  email: localStorage.getItem('email') || '',
-};
+  email: localStorage.getItem('email') || ''
+}
 
 export const blogSlice = createSlice({
   name: 'userInterests',
   initialState,
   reducers: {
     ARTICLES(state, { payload }) {
-      state.articles = payload.articles,
-        state.articlesCount = payload.articlesCount
+      (state.articles = payload.articles),
+        (state.articlesCount = payload.articlesCount)
     },
     ARTICLE(state, { payload }) {
       state.article = payload.article
     },
     LOGOUT(state) {
-      state.auth = false,
-        state.image = '',
-        state.email = '',
-        state.username = '',
-        state.token = ''
+      (state.auth = false),
+        (state.image = ''),
+        (state.email = ''),
+        (state.username = ''),
+        (state.token = '')
     },
     SIGNIN(state, { payload }) {
-      state.auth = true,
-        state.email = payload.email,
-        state.username = payload.username,
-        state.token = payload.token
+      (state.auth = true),
+        (state.email = payload.email),
+        (state.username = payload.username),
+        (state.token = payload.token)
     },
     SETIMG(state, { payload }) {
       state.image = payload

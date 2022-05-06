@@ -1,26 +1,28 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
-import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
-import FormInput from '../Forms/FormInput';
-import BlogAPI from '../../services/services';
 
-const blog = new BlogAPI();
+import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
+import FormInput from '../Forms/FormInput'
+import BlogAPI from '../../services/services'
+
+const blog = new BlogAPI()
 
 function EditProfile() {
-
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
   const dispatch = useDispatch()
-  const { username, token, email, image, } = useSelector((state) => state.blogReducer)
-  const [userName, setUserName] = useState(username);
-  const [userEmail, setUserEmail] = useState(email);
-  const [userAvatar, setUserAvatar] = useState(image);
-  const navigate = useNavigate();
+  const { username, token, email, image } = useSelector(
+    (state) => state.blogReducer
+  )
+  const [userName, setUserName] = useState(username)
+  const [userEmail, setUserEmail] = useState(email)
+  const [userAvatar, setUserAvatar] = useState(image)
+  const navigate = useNavigate()
   const onSubmit = (data) => {
     let user
     if (data.password.trim().length === 0) {
@@ -29,8 +31,8 @@ function EditProfile() {
           username: data.username,
           email: data.email,
           image: data.avatar
-        },
-      };
+        }
+      }
     } else {
       user = {
         user: {
@@ -38,20 +40,20 @@ function EditProfile() {
           email: data.email,
           password: data.password,
           image: data.avatar
-        },
-      };
+        }
+      }
     }
     blog.putUserProfile(token, user).then(({ user }) => {
       const putUser = {
         username: user.username,
         email: user.email,
-        token: user.token,
-      };
-      dispatch(SIGNIN(putUser));
-      dispatch(SETIMG(user.image));
-      navigate('/articles');
-    });
-  };
+        token: user.token
+      }
+      dispatch(SIGNIN(putUser))
+      dispatch(SETIMG(user.image))
+      navigate('/articles')
+    })
+  }
 
   return (
     <div className="form shadow-box">
@@ -65,7 +67,7 @@ function EditProfile() {
           name="username"
           label="Username"
           {...register('username', {
-            required: true,
+            required: true
           })}
         />
         <FormInput
@@ -77,7 +79,7 @@ function EditProfile() {
           label="Email address"
           type="email"
           {...register('email', {
-            required: true,
+            required: true
           })}
         />
         <FormInput
@@ -89,12 +91,12 @@ function EditProfile() {
           {...register('password', {
             minLength: {
               value: 6,
-              message: 'Your password needs to be at least 6 characters.',
+              message: 'Your password needs to be at least 6 characters.'
             },
             maxLength: {
               value: 40,
-              message: 'Your username must be no more than 40 characters.',
-            },
+              message: 'Your username must be no more than 40 characters.'
+            }
           })}
         />
         <FormInput
@@ -107,7 +109,7 @@ function EditProfile() {
           type="URL"
           {...register('avatar', {
             required: true,
-            pattern: /.jpg$|.png$/i,
+            pattern: /.jpg$|.png$/i
           })}
         />
         <button className="form_submit" type="submit">
@@ -115,7 +117,7 @@ function EditProfile() {
         </button>
       </form>
     </div>
-  );
+  )
 }
 
-export default EditProfile;
+export default EditProfile

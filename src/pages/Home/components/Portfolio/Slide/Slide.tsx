@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import s from './Slide.module.scss'
 import arrow from '../../../../../assets/img/arrow.png'
+
+import s from './Slide.module.scss'
 interface SlideProps {
-  img: string,
-  text: string,
-  head: string,
+  img: string
+  text: string
+  head: string
   link: string
 }
 
@@ -27,7 +28,6 @@ const Slide = ({ img, text, head, link }: SlideProps) => {
             <img src={arrow} alt="" />
           </div>
         </div>
-
       </div>
     </div>
   )
