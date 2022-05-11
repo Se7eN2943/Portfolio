@@ -19,7 +19,7 @@ function ArticleUser(props) {
   const delArticle = async () => {
     await blog.delArticle(token, slug)
     getAllArticles()
-    navigate('/articles', { replace: true })
+    navigate('/BlogApp/articles', { replace: true })
     setVisibale(false)
   }
 
@@ -75,7 +75,7 @@ function ArticleUser(props) {
               Delete
             </Button>
           </Popover>
-          <Link to={`/articles/${slug}/edit`}>
+          <Link to={`/BlogApp/articles/${slug}/edit`}>
             <button
               className="article_user_buttons__edit color-button"
               type="button"

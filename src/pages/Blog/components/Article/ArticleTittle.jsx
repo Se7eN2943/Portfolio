@@ -102,7 +102,7 @@ function ArticleTittle(props) {
     <div className="article_tittle">
       <div className="article_tittle__header">
         <h5 onClick={!alone ? () => getOneArticle(slug, token) : null}>
-          <Link to={`/articles/${slug}`}>{title}</Link>
+          <Link to={`/BlogApp/articles/${slug}`}>{title}</Link>
         </h5>
         {like ? <HeartFilled liked={liked} /> : <HeartOutlined liked={liked} />}
         <div className="licke-count">{likeCount !== 0 && likeCount}</div>

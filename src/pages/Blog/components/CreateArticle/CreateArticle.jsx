@@ -130,7 +130,7 @@ function CreateArticle({ editing, getOneArticle }) {
     } else {
       createArticleAPI.createArticle(token, article).then((article) => {
         getOneArticle(article.article.slug, token)
-        navigate(`/articles/${article.article.slug}`)
+        navigate(`/BlogApp/articles/${article.article.slug}`)
       })
     }
   }

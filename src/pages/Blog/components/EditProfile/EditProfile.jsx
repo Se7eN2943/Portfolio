@@ -51,7 +51,7 @@ function EditProfile() {
       }
       dispatch(SIGNIN(putUser))
       dispatch(SETIMG(user.image))
-      navigate('/articles')
+      navigate('/BlogApp/articles')
     })
   }
 

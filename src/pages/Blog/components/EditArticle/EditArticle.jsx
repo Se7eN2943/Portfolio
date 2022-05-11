@@ -20,7 +20,7 @@ function EditArticle() {
     })
   }, [])
 
-  username !== article.author.username && navigate('/articles')
+  username !== article.author.username && navigate('/BlogApp/articles')
 
   return username === article.author.username ? <CreateArticle editing /> : null
 }
