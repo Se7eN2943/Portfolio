@@ -14,7 +14,6 @@ export default class BlogAPI {
       }
     )
     if (!res.ok) return false
-    console.log(res.json())
     return await res.json()
   }
 
