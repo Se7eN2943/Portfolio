@@ -1,4 +1,3 @@
-
 //AviaSales
 export interface AviaSalesState {
   searchId: string
@@ -10,7 +9,7 @@ export interface AviaSalesState {
 }
 
 interface AviaSalesTicket {
-  carrier: string,
+  carrier: string
   price: number
   segments: Array<AviaSalesTicketSegments>
 }
@@ -37,7 +36,7 @@ export interface BlogState {
 }
 
 interface BlogStateArticle {
-  author: { username: string, image: string, following: boolean }
+  author: { username: string; image: string; following: boolean }
   body: string
   createdAt: string
   description: string
