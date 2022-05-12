@@ -7,7 +7,9 @@ const localArticle: string | null = localStorage.getItem('article')
 const initialState: BlogState = {
   articles: [],
   articlesCount: 0,
-  article: typeof localArticle === 'string' && JSON.parse(localArticle)?.article || {},
+  article:
+    (typeof localArticle === 'string' && JSON.parse(localArticle)?.article) ||
+    {},
   auth: localStorage.getItem('auth') || '',
   username: localStorage.getItem('username') || '',
   image: localStorage.getItem('image') || '',
