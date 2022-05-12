@@ -1,16 +1,34 @@
+
+//AviaSales
 export interface AviaSalesState {
   searchId: string
-  tickets: any //потом типизировать правильно
+  tickets: Array<AviaSalesTicket>
   ticketsFlag: boolean
-  filterList: any //потом типизировать правильно
-  sortFlag: any //потом типизировать правильно
+  filterList: Array<string>
+  sortFlag: string
   sliced: number
 }
 
+interface AviaSalesTicket {
+  carrier: string,
+  price: number
+  segments: Array<AviaSalesTicketSegments>
+}
+
+interface AviaSalesTicketSegments {
+  data: string
+  destination: string
+  duration: number
+  origin: string
+  stops: Array<string> | []
+}
+
+//Blog
+
 export interface BlogState {
-  articles: any //потом типизировать правильно
+  articles: Array<BlogStateArticle>
   articlesCount: number
-  article?: any //потом типизировать правильно
+  article?: BlogStateArticle | {}
   auth: boolean | string
   username: string
   image: string
@@ -18,158 +36,15 @@ export interface BlogState {
   email: string
 }
 
-interface Dto {}
-
-export interface InterestDto extends Dto {
-  // Название
+interface BlogStateArticle {
+  author: { username: string, image: string, following: boolean }
+  body: string
+  createdAt: string
+  description: string
+  favorited: boolean
+  favoritesCount: number
+  slug: string
+  tagList: Array<string>
   title: string
-
-  // Краткое описание
-  shortDescription: string
-}
-
-export interface InterestDtoApi {
-  interestsDtoList: InterestDto
-}
-
-export interface UserDto extends Dto {
-  // Username
-  username: string
-  //было name, для стандартизации с сервером сделал username. если в итоге что-то сломается вернуть обратно
-
-  // Имя
-  firstName: string
-
-  // Фамилия
-  lastName: string
-
-  // Отчество
-  middleName: string
-
-  // Почта
-  email: string
-
-  // Город проживания
-  city: string
-
-  // Доп.Инфо
-  aboutUser: string
-
-  // Интересы, заполняется не всегда
-  userInterests?: InterestDto[]
-
-  //Возраст
-  age?: number
-
-  //Роль пользователя
-  role?: string
-
-  //Фото
-  photo?: string
-}
-
-export interface EventTypeDto extends Dto {
-  // Название
-  type: string
-}
-
-export interface EventReviewDto extends Dto {
-  // Кто оставил отзыв
-  reviewer: UserDto
-
-  // сообщение
-  message: string
-
-  // Для какого мероприятия
-  eventId: number
-
-  // Время
-  time: string
-
-  // оценка
-  EventGrade: number
-}
-
-export interface EventDto extends Dto {
-  // Название
-  eventName: string
-  // Краткое описание
-  descriptionEvent: string
-  // Место провидения
-  placeEvent: string
-  // Город
-  city: string
-  // Время проведения
-  timeEvent: number[]
-  // Приватность
-  eventPrivacy: boolean
-  // Кол-во участников
-  eventNumberOfParticipant: number
-  // Тип мероприятия
-  eventType: EventTypeDto
-  // Id автора
-  authorId: number
-  // Интересы
-  eventInterests: InterestDto[]
-  // Status	StatusDto	Статус мероприятия. Строка-временный тип данных
-  status: string
-  // Минимальный возраст
-  minYear: number
-}
-
-export interface UserDtoRedux {
-  //Токен
-  token: string
-  //Данные юсера
-  userDto: UserDto
-}
-
-export interface servicesReducer {
-  //Флаг переключения локальный API/сетевой API
-  apiFlagLocal: boolean
-  userAuth: boolean
-}
-
-export interface LoginUserModel {
-  email: string
-  password: string
-  rememberMe?: boolean
-}
-
-export interface SignUpFields {
-  email: string
-  password: string
-  username: string
-  firstname: string
-
-  lastname: string
-  aboutUser: string
-  city: string
-  age: string
-}
-
-export interface CardProps {
-  name: string
-  surname: string
-  desc: string
-  age: number
-  photo?: string
-}
-export interface BoxGeometry {
-  width: number
-  height: number
-}
-
-export interface LoopItemProps extends BoxGeometry {
-  left: number
-}
-
-export type SliderStartGuard = 'start' | 'middle' | 'end'
-
-export interface City {
-  id: number
-  name: string
-  subject: string
-  lat: string
-  lot: string
+  updatedAt: string
 }

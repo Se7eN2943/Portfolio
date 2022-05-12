@@ -3,11 +3,11 @@ import { Progress } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { SEARCH_ID, TICKETS } from '../../redux/reducers/aviaSalesReducer'
+import logo from '../../assets/img/aviaLogo.png'
+import AviaSales from '../../services/AviaSales/services'
 
 import Filters from './components/Filters/Filters'
 import Content from './components/Content/Content'
-import logo from '../../assets/img/aviaLogo.png'
-import AviaSales from '../../services/AviaSales/services'
 
 import './AviaSales.scss'
 import './components/Filters/Filters.scss'
@@ -35,7 +35,6 @@ const AviaSalesApp = () => {
 
   const getTickets = () =>
     aviaSales.getTickets(searchId).then((ticket) => {
-      console.log(ticket)
       if (!ticket) return getTickets()
       dispatch(TICKETS(ticket))
       if (!ticket.stop) return getTickets()

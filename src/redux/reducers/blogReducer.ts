@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import { BlogState } from '../../types'
 
+const localArticle: string | null = localStorage.getItem('article')
+
 const initialState: BlogState = {
   articles: [],
   articlesCount: 0,
-  article: JSON.parse(localStorage.getItem('article'))?.article || {},
+  article: typeof localArticle === 'string' && JSON.parse(localArticle)?.article || {},
   auth: localStorage.getItem('auth') || '',
   username: localStorage.getItem('username') || '',
   image: localStorage.getItem('image') || '',

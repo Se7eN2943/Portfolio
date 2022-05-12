@@ -4,6 +4,7 @@
 .portfolio {
     @include flexCenter();
     flex-direction: column;
+    flex-wrap: wrap;
     margin-bottom: 150px;
 
     h5 {
@@ -15,13 +16,4 @@
         max-width: 1260px;
     }
 
-    .swiper-button-next,
-    .swiper-rtl .swiper-button-prev {
-        &:after {
-            content: 'next';
-        }
-
-        right: 35px;
-        left: auto;
-    }
 }

@@ -29,8 +29,4 @@ export default function setLocalHost(username, email, token, auth, image) {
   localStorage.setItem('auth', auth)
 }
 
-export {
-  mutationData,
-  debounce,
-  setLocalHost
-}
+export { mutationData, debounce, setLocalHost }

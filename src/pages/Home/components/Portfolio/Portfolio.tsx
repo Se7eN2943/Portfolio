@@ -32,9 +32,7 @@ const Portfolio: FC = () => {
           modules={[Navigation, Pagination]}
           navigation
           pagination={{ clickable: true }}
-          spaceBetween={100}
-          onSlideChange={(e) => console.log(e)}
-          onSwiper={(swiper) => console.log(swiper)}
+          // spaceBetween={100}
         >
           <SwiperSlide>
             <Slide img={todo} text={todoText} head="ToDo App" link="/ToDoApp" />

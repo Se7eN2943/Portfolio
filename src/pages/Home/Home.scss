@@ -4,4 +4,20 @@
     background-color: $body_bgc;
     color: $text_color;
     line-height: inherit;
+
+    .swiper-button-next {
+        right: 35px;
+    }
+}
+
+.ant-modal {
+    width: 100%;
+    a{
+        color: blue
+    }
+
+}
+
+.ant-modal-body {
+    font-size: 17px;
 }

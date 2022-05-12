@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import logo from '../../../../../../assets/img/S7Logo.png'
+
 import Route from './Route/Route'
 
 const Ticket = ({ price, segments }) => {
