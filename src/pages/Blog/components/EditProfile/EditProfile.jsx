@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput'
-import BlogAPI from '../../services/services'
+import BlogAPI from '../../../../services/Blog/services'
 
 const blog = new BlogAPI()
 

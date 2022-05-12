@@ -5,7 +5,6 @@ import ToDoApp from '../pages/ToDoApp/ToDoApp'
 import MovieApp from '../pages/Cinema/MovieApp'
 import AviaSalesApp from '../pages/Avia/AviaSales'
 import BlogApp from '../pages/Blog/BlogApp'
-import './App.scss'
 
 export default function App() {
   return (

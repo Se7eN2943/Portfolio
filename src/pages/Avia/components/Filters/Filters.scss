@@ -1,7 +1,4 @@
-@import '../../../../style/colors';
-
-
-
+@use "../../../../style"as *;
 
     .aviaFilters {
         display: flex;
@@ -57,8 +54,6 @@
         .ant-checkbox-indeterminate .ant-checkbox-inner::after {
             background-color: $blue;
         }
-
-
     }
 
 

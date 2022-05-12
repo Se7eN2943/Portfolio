@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { ARTICLES, ARTICLE } from '../../redux/reducers/blogReducer'
 
-import BlogAPI from './services/services'
+import BlogAPI from '../../services/Blog/services'
 import Header from './components/Header/Header'
 import ArticleList from './components/ArticleList/ArticleList'
 import AlloneArticle from './components/AlloneArticle/AlloneArticle'

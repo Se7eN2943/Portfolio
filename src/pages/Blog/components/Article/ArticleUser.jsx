@@ -5,7 +5,7 @@ import { Popover, Button } from 'antd'
 import { InfoCircleFilled } from '@ant-design/icons'
 import { Link, useNavigate } from 'react-router-dom'
 
-import BlogAPI from '../../services/services'
+import BlogAPI from '../../../../services/Blog/services'
 
 const blog = new BlogAPI()
 

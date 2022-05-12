@@ -1,4 +1,4 @@
-@import '../../style/colors';
+@use "../../style"as *;
 
 .avia {
     background-color: $fill;

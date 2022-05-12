@@ -1,2 +1,7 @@
 @forward "./mixins";
 @forward "./colors";
+@import 'antd/dist/antd.css';
+@import 'animate.css';
+@import "./reset.scss";
+@import "./fonts.scss";
+@import "~normalize.css/normalize.css";

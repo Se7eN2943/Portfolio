@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 
 import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput'
-import BlogAPI from '../../services/services'
-import setLocalHost from '../../services/utiles'
+import BlogAPI from '../../../../services/Blog/services'
+import { setLocalHost } from '../../../../utils/util'
 
 const blog = new BlogAPI()
 

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import FilmCard from '../FilmCard/FilmCard'
-import { ConsumerGeners } from '../../services'
+import { ConsumerGeners } from '../../../../services/MovieApp/services'
 
 export default class FilmCardList extends Component {
   static propTypes = {

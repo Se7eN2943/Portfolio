@@ -2,8 +2,11 @@ import { Component } from 'react'
 import { Input, Spin, Alert, Tabs } from 'antd'
 
 import FilmCardList from './components/FilmCardList/FilmCardList'
-import CinemaService, { ProviderGeners } from './services'
-import debounce, { mutationData } from './util'
+import CinemaService, { ProviderGeners } from '../../services/MovieApp/services'
+import { mutationData, debounce } from '../../utils/util'
+
+import genres from '../../services/MovieApp/localApi/genres.json'
+import movieList from '../../services/MovieApp/localApi/populare.json'
 
 import './components/FilmCard/FilmCard.scss'
 import './MovieApp.scss'
@@ -33,7 +36,10 @@ export default class MovieApp extends Component {
   componentDidMount = async () => {
     await this.movies
       .genresList()
-      .then((res) => this.setState({ genres: res.genres }))
+      .then((res) => {
+        if (!res) this.setState({ genres: genres.genres })
+        else this.setState({ genres: res.genres })
+      })
     sessionStorage.getItem('itemsFor') !== null &&
       this.setState({
         itemsFor: JSON.parse(sessionStorage.getItem('itemsFor'))
@@ -57,6 +63,7 @@ export default class MovieApp extends Component {
         : (inquiry = this.movies.apiResurses(url, value, pg))
       inquiry
         .then((movieOBJ) => {
+          if (!movieOBJ) movieOBJ = movieList
           const elements = mutationData(movieOBJ)
           return this.setState({
             items: elements,
@@ -144,7 +151,6 @@ export default class MovieApp extends Component {
                 />
               )}
               {!(loaded && error) && < FilmCardList card={items} onChangeFavorit={this.onChangeFavorit} />}
-              )}
             </TabPane>
             <TabPane tab="Оцененные" key="2">
               {!loaded && <Spin />}

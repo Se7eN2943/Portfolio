@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import FormInput from '../Forms/FormInput'
-import BlogAPI from '../../services/services'
+import BlogAPI from '../../../../services/Blog/services'
 
 const createArticleAPI = new BlogAPI()
 

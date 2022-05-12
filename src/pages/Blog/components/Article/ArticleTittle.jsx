@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import BlogAPI from '../../services/services'
+import BlogAPI from '../../../../services/Blog/services'
 
 const blog = new BlogAPI()
 

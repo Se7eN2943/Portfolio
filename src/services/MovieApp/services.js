@@ -13,10 +13,7 @@ export default class CinemaService {
     const res = await fetch(
       this.defURL + url + this.apiKey + this.language + pages + serch
     )
-    if (!res.ok)
-      throw new Error(
-        'Не удалось загрузить данные, попробуйте перезагрузить страницу'
-      )
+    if (!res.ok) return false
     return await res.json()
   }
 
@@ -24,14 +21,13 @@ export default class CinemaService {
     const res = await fetch(
       `${this.defURL}genre/movie/list${this.apiKey}${this.language}`
     )
-    if (!res.ok) throw new Error('Что то пошло не так')
+    if (!res.ok) return false
     return await res.json()
   }
 
   async rateMovie(value, id, session_id) {
     const res = await fetch(
-      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`,
-      {
+      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -62,7 +58,13 @@ export default class CinemaService {
   }
 }
 
-const { Provider: ProviderGeners, Consumer: ConsumerGeners } =
-  React.createContext()
+const {
+  Provider: ProviderGeners,
+  Consumer: ConsumerGeners
+} =
+React.createContext()
 
-export { ProviderGeners, ConsumerGeners }
+export {
+  ProviderGeners,
+  ConsumerGeners
+}

@@ -6,10 +6,9 @@ import { SEARCH_ID, TICKETS } from '../../redux/reducers/aviaSalesReducer'
 
 import Filters from './components/Filters/Filters'
 import Content from './components/Content/Content'
-import logo from './avia.png'
-import AviaSales from './services'
+import logo from '../../assets/img/aviaLogo.png'
+import AviaSales from '../../services/AviaSales/services'
 
-import 'animate.css'
 import './AviaSales.scss'
 import './components/Filters/Filters.scss'
 import './components/Content/Tabs/Tabs.scss'
@@ -36,6 +35,7 @@ const AviaSalesApp = () => {
 
   const getTickets = () =>
     aviaSales.getTickets(searchId).then((ticket) => {
+      console.log(ticket)
       if (!ticket) return getTickets()
       dispatch(TICKETS(ticket))
       if (!ticket.stop) return getTickets()

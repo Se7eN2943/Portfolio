@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { ARTICLE } from '../../../../redux/reducers/blogReducer'
 import CreateArticle from '../CreateArticle/CreateArticle'
-import BlogAPI from '../../services/services'
+import BlogAPI from '../../../../services/Blog/services'
 
 const blog = new BlogAPI()
 

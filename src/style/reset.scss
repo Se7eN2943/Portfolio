@@ -120,16 +120,54 @@ q {
     }
 }
 
-button {
-    border: none;
-    cursor: pointer;
-}
-
 textarea,
 input {
     outline: none;
 }
 
-h6{
+h6 {
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0px;
+}
+
+button {
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    appearance: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    color: inherit;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }

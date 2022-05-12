@@ -1,0 +1,405 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg",
+            "genre_ids": [
+                28,
+                878,
+                35,
+                10751,
+                12
+            ],
+            "id": 675353,
+            "original_language": "en",
+            "original_title": "Sonic the Hedgehog 2",
+            "overview": "Поселившись в Грин Хилз, Соник стремится доказать, что у него есть все задатки настоящего героя. И геройское испытание не заставляет себя долго ждать: злодейский доктор Роботник вновь строит козни. На этот раз — с загадочным напарником Наклзом. Вместе они разыскивают бесценный изумруд, в котором заключены силы, способные уничтожать целые цивилизации. Соник объединяется с лисенком Тейлзом, чтобы отправиться в кругосветное путешествие и найти изумруд до того, как он попадет в плохие руки.",
+            "popularity": 10974.265,
+            "poster_path": "/nhZiYAVeEBVHwnNVRVGvyZWkTCm.jpg",
+            "release_date": "2022-03-30",
+            "title": "Соник 2 в кино",
+            "video": false,
+            "vote_average": 7.7,
+            "vote_count": 1172
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5P8SmMzSNYikXpxil6BYzJ16611.jpg",
+            "genre_ids": [
+                80,
+                9648,
+                53
+            ],
+            "id": 414906,
+            "original_language": "en",
+            "original_title": "The Batman",
+            "overview": "После двух лет поисков правосудия на улицах Готэма для своих сограждан Бэтмен становится олицетворением беспощадного возмездия. Когда в городе происходит серия жестоких нападений на представителей элиты, загадочные улики приводят Брюса Уэйна в самые темные закоулки преступного мира, где он встречает Женщину-Кошку, Пингвина, Кармайна Фальконе и Загадочника. Теперь под прицелом оказывается сам Бэтмен, которому предстоит отличить друга от врага и восстановить справедливость во имя Готэма.",
+            "popularity": 4447.894,
+            "poster_path": "/3EXgl14Wmr5NcbYnBy1kavGHnvh.jpg",
+            "release_date": "2022-03-01",
+            "title": "Бэтмен",
+            "video": false,
+            "vote_average": 7.8,
+            "vote_count": 4416
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fEe5fe82qHzjO4yej0o79etqsWV.jpg",
+            "genre_ids": [
+                16,
+                35,
+                28,
+                10751,
+                80
+            ],
+            "id": 629542,
+            "original_language": "en",
+            "original_title": "The Bad Guys",
+            "overview": "Мир еще не видел столь искусных авантюристов: ловкий карманник Мистер Волк, опытный взломщик сейфов Мистер Змей, хладнокровный мастер маскировки Мистер Акула, вспыльчивый и мускулистый Мистер Пиранья, а также остроумная хакер высшего класса Мисс Тарантула. Однако даже самые умные преступники иногда допускают ошибки. Чтобы спастись от неминуемый тюрьмы, главарь банды Мистер Волк вынужден идти на крайние меры: «Плохие парни» должны измениться в лучшую сторону. Или сделать вид? Но когда новый злодей угрожает городу, сможет ли Мистер Волк убедить остальных действительно стать… хорошими ребятами?",
+            "popularity": 4219.256,
+            "poster_path": "/b2AfaKk1FH3wXkNkJWeAilq8cTZ.jpg",
+            "release_date": "2022-03-17",
+            "title": "Плохие парни",
+            "video": false,
+            "vote_average": 7.7,
+            "vote_count": 319
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/aEGiJJP91HsKVTEPy1HhmN0wRLm.jpg",
+            "genre_ids": [
+                28,
+                12
+            ],
+            "id": 335787,
+            "original_language": "en",
+            "original_title": "Uncharted",
+            "overview": "Нейтан Дрейк и Виктор «Салли» Салливан, два искателя приключений, отправляются на поиски величайшего сокровища мира. Кроме того, они надеются найти улики, которые приведут их к давно потерянному брату Нейтана.",
+            "popularity": 4214.334,
+            "poster_path": "/s04r9V6BX1FO2INzc2DL21UW57T.jpg",
+            "release_date": "2022-02-10",
+            "title": "Анчартед: На картах не значится",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 1813
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg",
+            "genre_ids": [
+                14,
+                28,
+                12
+            ],
+            "id": 453395,
+            "original_language": "en",
+            "original_title": "Doctor Strange in the Multiverse of Madness",
+            "overview": "Продолжение истории величайшего мага Земли доктора Стивена Стрэнджа. С помощью старых и новых мистических союзников Стрэндж отправляется в мультивселенную, чтобы сразиться с новым таинственным противником.",
+            "popularity": 4400.801,
+            "poster_path": "/nuK6N5SC4t9bfh2bPSOCdVVKNPM.jpg",
+            "release_date": "2022-05-04",
+            "title": "Доктор Стрэндж: В мультивселенной безумия",
+            "video": false,
+            "vote_average": 7.5,
+            "vote_count": 1231
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 634649,
+            "original_language": "en",
+            "original_title": "Spider-Man: No Way Home",
+            "overview": "Жизнь и репутация Питера Паркера оказываются под угрозой, поскольку Мистерио раскрыл всему миру тайну личности Человека-паука. Пытаясь исправить ситуацию, Питер обращается за помощью к Стивену Стрэнджу, но вскоре всё становится намного опаснее.",
+            "popularity": 3666.323,
+            "poster_path": "/3hLU5V1XDF0oHT9YUHvYC4j0Ix5.jpg",
+            "release_date": "2021-12-15",
+            "title": "Человек-паук: Нет пути домой",
+            "video": false,
+            "vote_average": 8.1,
+            "vote_count": 12630
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/eQN31P4IEhyp6NkdccvppJnyuJ4.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14,
+                878
+            ],
+            "id": 284052,
+            "original_language": "en",
+            "original_title": "Doctor Strange",
+            "overview": "Страшная автокатастрофа поставила крест на карьере успешного нейрохирурга Доктора Стрэнджа. Отчаявшись, он отправляется в путешествие в поисках исцеления и открывает в себе невероятные способности к трансформации пространства и времени. Теперь он — связующее звено между параллельными измерениями, а его миссия — защищать жителей Земли и противодействовать Злу, какое бы обличие оно ни принимало.",
+            "popularity": 2286.312,
+            "poster_path": "/jG6vxfiY3BFSEg99Q3OQsjM6ea2.jpg",
+            "release_date": "2016-10-25",
+            "title": "Доктор Стрэндж",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 18911
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/192vHmAPbk5esL34XMKZ1YLGFjr.jpg",
+            "genre_ids": [
+                28,
+                53,
+                80
+            ],
+            "id": 763285,
+            "original_language": "en",
+            "original_title": "Ambulance",
+            "overview": "Ветеран Уилл Шарп отчаянно нуждается в деньгах, чтобы спасти смертельно больную жену. Он обращается за помощью к брату-преступнику Дэнни, и тот уговаривает его ограбить банк. Однако всё идет не по плану, и братьям приходится угнать машину скорой помощи вместе с двумя заложниками — врачом и раненым полицейским.",
+            "popularity": 2521.488,
+            "poster_path": "/zkD1tV0ZhVY6sA3RncoOpWZ6fjz.jpg",
+            "release_date": "2022-03-16",
+            "title": "Скорая",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 521
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                35,
+                14
+            ],
+            "id": 508947,
+            "original_language": "en",
+            "original_title": "Turning Red",
+            "overview": "Уверенная в себе тринадцатилетняя Мэй Ли разрывается между тем, чтобы оставаться прилежной и послушной маминой дочкой и справиться с хаосом подросткового возраста. И, казалось бы, перемен в её интересах и отношениях и подростковых изменений в собственном теле и так достаточно, но нет — всякий раз, когда она слишком волнуется (что с подростком случается практически всегда), она моментально превращается в гигантскую красную панду!",
+            "popularity": 2331.811,
+            "poster_path": "/1pCx1fyB4w0tCtuhTFfMxqhiHZa.jpg",
+            "release_date": "2022-03-10",
+            "title": "Я краснею",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 2064
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/x747ZvF0CcYYTTpPRCoUrxA2cYy.jpg",
+            "genre_ids": [
+                878,
+                12,
+                28
+            ],
+            "id": 406759,
+            "original_language": "en",
+            "original_title": "Moonfall",
+            "overview": "В 2011 году во время рядового ремонта спутника на находившихся в открытом космосе астронавтов напал странный рой, вылетевший из лунного кратера. Один космонавт погиб, а второй — Брайан Харпер — несколько лет после происшествия пытался убедить НАСА, что в случившемся виноват необъяснимый феномен.  12 лет спустя Луна внезапно сходит с орбиты и идёт на столкновение с Землёй, что провоцирует множественные катаклизмы и грозит гибелью человечества. Астроном-самородок, первым заметивший данную аномалию и считающий, что Луна является мегаструктурой, безуспешно пытается достучаться до правительства, поэтому просит помощи у вышедшего в отставку Харпера.",
+            "popularity": 2143.359,
+            "poster_path": "/noe4dNuEbqj7xIjgOFkTOohRsNC.jpg",
+            "release_date": "2022-02-03",
+            "title": "Падение Луны",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 938
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/i0zbSmiyyylh7H3Qb4jgscz46Pm.jpg",
+            "genre_ids": [
+                27
+            ],
+            "id": 893370,
+            "original_language": "es",
+            "original_title": "Virus-32",
+            "overview": "Вспыхивает вирус, и на улицах Монтевидео бушует леденящая кровь бойня. Больные становятся охотниками и успокаивают свою лихорадку, только беспринципно убивая всех, кто еще не заражен. Не подозревая об этом, Айрис и ее дочь проводят день в спортивном клубе, где Айрис работает охранником. Когда наступает ночь, вот-вот начнется бой без пощады. Их единственная надежда на спасение появляется, когда они обнаруживают, что после каждой атаки у зараженных, кажется, есть 32 секунды покоя, прежде чем снова атаковать.",
+            "popularity": 1829.394,
+            "poster_path": "/3CvBuw9aoziJJAbqymmsF2drnzH.jpg",
+            "release_date": "2022-04-21",
+            "title": "Вирус-32",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 37
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kLnqNE9Af5QHyvUxw8cDGhF1ilv.jpg",
+            "genre_ids": [
+                53
+            ],
+            "id": 956101,
+            "original_language": "la",
+            "original_title": "La Octava Cláusula",
+            "overview": "",
+            "popularity": 2609.505,
+            "poster_path": "/8tc8eMFAX2SDC1TRu987qFQy8Cl.jpg",
+            "release_date": "2022-04-29",
+            "title": "La Octava Cláusula",
+            "video": false,
+            "vote_average": 4.1,
+            "vote_count": 7
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/t9hNIUFcy0tYu55IPxjxRTTdZ6X.jpg",
+            "genre_ids": [
+                10749,
+                18
+            ],
+            "id": 829557,
+            "original_language": "pl",
+            "original_title": "365 Days: This Day",
+            "overview": "Лаура и Массимо возвращаются — еще сильнее, чем раньше. Но семейные связи Массимо и загадочный мужчина, претендующий на сердце Лауры, усложняют им жизнь.",
+            "popularity": 1737.824,
+            "poster_path": "/ee7qhbFyw4adAHgDTAELuiskkht.jpg",
+            "release_date": "2022-04-27",
+            "title": "365 дней: этот день",
+            "video": false,
+            "vote_average": 5.6,
+            "vote_count": 354
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2n95p9isIi1LYTscTcGytlI4zYd.jpg",
+            "genre_ids": [
+                18,
+                53,
+                80
+            ],
+            "id": 799876,
+            "original_language": "en",
+            "original_title": "The Outfit",
+            "overview": "История гениального портного Леонарда, который шил костюмы для успешных английских джентльменов на улице Сэвил-Роу. Но по стечению обстоятельств он вынужден переехать в Чикаго и открыть дело там. Но обычные люди не могут позволить себе такие костюмы. А вот гангстеры.",
+            "popularity": 1749.077,
+            "poster_path": "/q281nO10c3V0ydIDl86U7cDqdP3.jpg",
+            "release_date": "2022-02-25",
+            "title": "Костюм",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 188
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/figlwUsXXFehX3IebdjqNLV6vWk.jpg",
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 628900,
+            "original_language": "en",
+            "original_title": "The Contractor",
+            "overview": "Служба в армии с детства была мечтой Джеймса Рида, а зеленый берет — предметом гордости. Но после полученных ранений он остается не у дел: в мирном обществе ему нет места, а состояние здоровья приходится поддерживать медикаментами, не всегда самыми «чистыми». И когда подворачивается возможность снова взяться за старое ремесло, бывший солдат не медлит. Но теперь выбор, на кого направить оружие, лежит полностью на нем.",
+            "popularity": 1799.049,
+            "poster_path": "/oG6KyUIQy9HJ7BiJf1ymXKBdJuX.jpg",
+            "release_date": "2022-03-10",
+            "title": "Наёмник",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 206
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/xzLOQjF1w4og963lxsGJwMhPbZ.jpg",
+            "genre_ids": [
+                28,
+                80,
+                18
+            ],
+            "id": 951470,
+            "original_language": "en",
+            "original_title": "Silverton Siege",
+            "overview": "После неудачной диверсии трое борцов с апартеидом попадают в сложную ситуацию с заложниками в банке.",
+            "popularity": 1203.843,
+            "poster_path": "/5HruMN0vvl84AqD7sCDXFNO4RhP.jpg",
+            "release_date": "2022-04-27",
+            "title": "Осада в Сильвертоне",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 48
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                14
+            ],
+            "id": 568124,
+            "original_language": "en",
+            "original_title": "Encanto",
+            "overview": "Удивительная семья Мадригалов живет в спрятанном в горах Колумбии волшебном доме, расположенном в чудесном и очаровательном уголке под названием Энканто. Каждого ребёнка в семье Мадригалов магия этого места благословила уникальным даром — от суперсилы до способности исцелять. Увы, магия обошла стороной одну лишь юную Мирабель. Обнаружив, что магия Энканто находится в опасности, Мирабель решает, что именно она может быть последней надеждой на спасение своей особенной семьи.",
+            "popularity": 1126.772,
+            "poster_path": "/wBNoLSPaQ6RQFFnPZ9MllfgqqHS.jpg",
+            "release_date": "2021-11-24",
+            "title": "Энканто",
+            "video": false,
+            "vote_average": 7.7,
+            "vote_count": 6368
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/qNRkfXBdAuXk9Qs3BEDIfmbAK9w.jpg",
+            "genre_ids": [
+                80,
+                28
+            ],
+            "id": 883502,
+            "original_language": "en",
+            "original_title": "Fortress: Sniper's Eye",
+            "overview": "Через несколько недель после смертельного нападения на лагерь Крепости Роберт совершает дерзкое спасение, чтобы спасти Сашу, вдову своего старого заклятого врага Бальзари. Но там, в командном бункере лагеря, оказывается, что у Саши могут быть свои коварные планы. Когда начинается новая атака, Роберт сталкивается со знакомым лицом, которое, как он думал, он никогда больше не увидит…",
+            "popularity": 1618.603,
+            "poster_path": "/61J34xHVVdQHbJ4MSCWQo4e727v.jpg",
+            "release_date": "2022-04-29",
+            "title": "Крепость",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 19
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/wdjdHBDwmynWUrJcNzS24uegvK5.jpg",
+            "genre_ids": [
+                12,
+                14
+            ],
+            "id": 338953,
+            "original_language": "en",
+            "original_title": "Fantastic Beasts: The Secrets of Dumbledore",
+            "overview": "Профессор Альбус Дамблдор узнает, что могущественный темный волшебник Геллерт Грин-де-Вальд планирует захватить власть над миром. Понимая, что не сможет остановить его в одиночку, Дамблдор просит магозоолога Ньюта Саламандера возглавить команду из выдающихся волшебников и одного отважного магла-пекаря. Им предстоят невероятно опасные приключения, встреча со старыми и укрощение новых магических существ и борьба со сторонниками Грин-де-Вальда, которых становится все больше. Но какая роль в этой миссии уготована самому Дамблдору?",
+            "popularity": 1114.828,
+            "poster_path": "/o0mzIW5xQJmjsgQJoWsC1rnkoN3.jpg",
+            "release_date": "2022-04-06",
+            "title": "Фантастические твари: Тайны Дамблдора",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 934
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/j8ve0iuDEnrcSpUxL62uvI4wnwB.jpg",
+            "genre_ids": [
+                35,
+                10751,
+                10749
+            ],
+            "id": 937337,
+            "original_language": "es",
+            "original_title": "¡Qué despadre!",
+            "overview": "",
+            "popularity": 1006.306,
+            "poster_path": "/IkdBm3dDA11pNFlbkLcU5WdESn.jpg",
+            "release_date": "2022-02-09",
+            "title": "¡Qué despadre!",
+            "video": false,
+            "vote_average": 8,
+            "vote_count": 26
+        }
+    ],
+    "total_pages": 33512,
+    "total_results": 670226
+}

@@ -6,13 +6,13 @@ import { useDispatch } from 'react-redux'
 
 import { SIGNIN, SETIMG } from '../../../../redux/reducers/blogReducer'
 import FormInput from '../Forms/FormInput'
-import BlogAPI from '../../services/services'
-import setLocalHost from '../../services/utiles'
-import defaultPhoto from '../default_photo.png'
+import BlogAPI from '../../../../services/Blog/services'
+import { setLocalHost } from '../../../../utils/util'
+import defaultPhoto from '../../../../assets/img/blogDefault_photo.png'
 
 const blog = new BlogAPI()
 
-function SingUp({ setSignIn, setUserImg }) {
+function SingUp() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const {
