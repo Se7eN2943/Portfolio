@@ -35,6 +35,7 @@ export default class MovieApp extends Component {
 
   componentDidMount = async () => {
     await this.movies.genresList().then((res) => {
+      console.log(res)
       if (!res) this.setState({ genres: genres.genres })
       else this.setState({ genres: res.genres })
     })

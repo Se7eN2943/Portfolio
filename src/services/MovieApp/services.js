@@ -8,27 +8,34 @@ export default class CinemaService {
   }
 
   async apiResurses(url, serchValue, page = 1) {
-    const serch = `&query=${serchValue}`
-    const pages = `&page=${page}`
-    const res = await fetch(
-      this.defURL + url + this.apiKey + this.language + pages + serch
-    )
-    if (!res.ok) return false
-    return await res.json()
+    try {
+      const serch = `&query=${serchValue}`
+      const pages = `&page=${page}`
+      const res = await fetch(
+        this.defURL + url + this.apiKey + this.language + pages + serch
+      )
+      if (!res.ok) return false
+      return await res.json()
+    } catch (error) {
+      return false
+    }
   }
 
   async genresList() {
-    const res = await fetch(
-      `${this.defURL}genre/movie/list${this.apiKey}${this.language}`
-    )
-    if (!res.ok) return false
-    return await res.json()
+    try {
+      const res = await fetch(
+        `${this.defURL}genre/movie/list${this.apiKey}${this.language}`
+      )
+      if (!res.ok) return false
+      return await res.json()
+    } catch (error) {
+      return false
+    }
   }
 
   async rateMovie(value, id, session_id) {
     const res = await fetch(
-      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`,
-      {
+      `${this.defURL}movie/${id}/rating${this.apiKey}&guest_session_id=${session_id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -59,7 +66,13 @@ export default class CinemaService {
   }
 }
 
-const { Provider: ProviderGeners, Consumer: ConsumerGeners } =
-  React.createContext()
+const {
+  Provider: ProviderGeners,
+  Consumer: ConsumerGeners
+} =
+React.createContext()
 
-export { ProviderGeners, ConsumerGeners }
+export {
+  ProviderGeners,
+  ConsumerGeners
+}
