@@ -33,7 +33,7 @@ const Header: FC = () => {
           </p>
           <p>
             GitHub:{' '}
-            <a href="https://github.com/Se7eN2943">
+            <a href="https://github.com/Se7eN2943?tab=repositories">
               https://github.com/Se7eN2943
             </a>
           </p>
