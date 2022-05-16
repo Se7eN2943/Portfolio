@@ -110,8 +110,7 @@ export default class MovieApp extends Component {
 
   render() {
     const { TabPane } = Tabs
-    const { error, loaded, items, onloaded, totalRes, pages, value, genres } =
-      this.state
+    const { error, loaded, items, onloaded, totalRes, genres } = this.state
     return (
       <ProviderGeners value={genres}>
         <main className="filmCards">
